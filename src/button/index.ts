@@ -8,7 +8,7 @@ export default defineComponent({
 
   render() {
 
-    return h("button", null, "MyButton");
+    return h("button", null, "IButton");
 
   },
 

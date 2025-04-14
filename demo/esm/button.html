@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Demo</h2>
+  <div id="app"></div>
+  <script type="module">
+    import { createApp } from "vue/dist/vue.esm-bundler.js"
+    import IUI, { SFCButton, JSXButton, IButton } from '../../dist/i-ui.js'
+
+    createApp({
+      template: `
+        <IButton/>
+        <JSXButton/>
+        <SFCButton/>
+      `
+    }).component(SFCButton.name, SFCButton)
+      .component(JSXButton.name, JSXButton)
+      .component(IButton.name, IButton).mount('#app')
+  </script>
+</body>
+
+</html>
