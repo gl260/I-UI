@@ -1,2 +1,5 @@
-const s: string = "Hello, TS!";
-console.log('sss',s);
+import { createApp } from "vue"
+
+import IButton from './button'
+
+createApp(IButton).mount('#app')
