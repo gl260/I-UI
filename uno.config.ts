@@ -3,7 +3,13 @@ import { defineConfig, presetWind3, presetAttributify, presetIcons } from "unocs
 const ButtonColors = ['primary', 'success', 'warning', 'danger', 'info'];
 const safelist = [
   ...ButtonColors.map((v) => `bg-${v}`),
+  'bg-#fff',
+  'bg-#fff/30',
+  'bg-#fff/70',
+  ...ButtonColors.map((v) => `bg-${v}/30`),
   ...ButtonColors.map((v) => `hover:bg-${v}/80`),
+  ...ButtonColors.map((v) => `border-${v}`),
+  ...ButtonColors.map((v) => `text-${v}`),
 ];
 
 export default defineConfig({
