@@ -10,6 +10,10 @@ export default defineComponent({
     plain: {
       type: Boolean,
       default: false
+    },
+    raund: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props, { slots }) {
@@ -20,10 +24,10 @@ export default defineComponent({
         fontFamily: 'Arial, "Microsoft YaHei", sans-serif', // 统一字体
       }}
       class={`
-        ${props.plain ? 'py-[7px] px-[15px]' : 'py-2 px-4'}
         font-semibold
-        rounded-lg
         shadow-md
+        ${props.plain ? 'py-[7px] px-[15px]' : 'py-2 px-4'}
+        ${props.raund ? 'rounded-full' : 'rounded-md'}
         ${props.type ? (props.plain ? `text-${props.type}` : 'text-white') : 'text-#606266'}
         ${props.plain
           ? `bg-${props.type ? props.type : '#fff'}/30`
@@ -34,6 +38,7 @@ export default defineComponent({
           : 'border-none'}
         cursor-pointer
         text-[14px]
+        
       `}>
         {slots.default ? slots.default() : ''}
       </button>
