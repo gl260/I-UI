@@ -1,7 +1,13 @@
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 
 export default defineComponent({
   name: "IButton",
+  props: {
+    type: {
+      type: String as PropType<'primary' | 'success' | 'warning' | 'danger' | 'info' | ''>,
+      default: ''
+    }
+  },
   setup(props, { slots }) {
     return () => 
       <button class={`
@@ -10,9 +16,9 @@ export default defineComponent({
         font-semibold
         rounded-lg
         shadow-md
-        text-#606266
-        bg-#fff
-        hover:bg-#fff/70
+        ${props.type ? 'text-white' : 'text-#606266'}
+        bg-${props.type ? props.type : '#fff'}
+        hover:bg-${props.type ? props.type : '#fff'}/70
         border-none
         cursor-pointer`}> 
         {slots.default ? slots.default() : ''}
