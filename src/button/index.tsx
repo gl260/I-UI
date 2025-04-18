@@ -23,7 +23,11 @@ export default defineComponent({
       type: String as PropType<'search' | 'edit' | 'checkmark' | 'star' | 'mail' | ''>,
       default: ''
     },
-    
+    disabled: {
+      type: Boolean,
+      default: false
+    } 
+
   },
   setup(props, { slots }) {
     const renderIcon = () => {
@@ -55,6 +59,7 @@ export default defineComponent({
           : 'border-none'}
         cursor-pointer
         text-[14px]
+        ${props.disabled ? 'cursor-not-allowed opacity-60' : ''}
       `}>
         {renderIcon()}
         {slots.default ? slots.default() : ''}

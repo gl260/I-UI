@@ -29,6 +29,22 @@
   <i-button icon="star" circle type="warning"></i-button>
   <i-button icon="star" circle type="danger"></i-button>
   <i-button icon="mail" circle type="info"></i-button>
+
+  <div style="height: 30px"></div>
+  <i-button disabled>默认按钮</i-button>
+  <i-button disabled type="primary">Primary</i-button>
+  <i-button disabled type="success">Success</i-button>
+  <i-button disabled type="warning">Warning</i-button>
+  <i-button disabled type="danger">Danger</i-button>
+  <i-button disabled type="info">Info</i-button>
+
+  <div style="height: 30px"></div>
+  <i-button disabled plain>默认按钮</i-button>
+  <i-button disabled plain type="primary">Primary</i-button>
+  <i-button disabled plain type="success">Success</i-button>
+  <i-button disabled plain type="warning">Warning</i-button>
+  <i-button disabled plain type="danger">Danger</i-button>
+  <i-button disabled plain type="info">Info</i-button>
 </template>
 
 <script setup lang="ts">
