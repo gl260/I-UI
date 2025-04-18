@@ -1,4 +1,4 @@
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType, computed } from "vue";
 
 export default defineComponent({
   name: "IButton",
@@ -14,9 +14,23 @@ export default defineComponent({
     raund: {
       type: Boolean,
       default: false
-    }
+    },
+    circle: {
+      type: Boolean,
+      default: false
+    },
+    icon: {
+      type: String as PropType<'search' | 'edit' | 'checkmark' | 'star' | 'mail' | ''>,
+      default: ''
+    },
+    
   },
   setup(props, { slots }) {
+    const renderIcon = () => {
+      if(!props.icon) return null;
+      return <i class={`i-fluent-${props.icon}-20-regular inline-block`}></i>
+    };
+
     return () => 
       <button
       style={{ 
@@ -26,8 +40,11 @@ export default defineComponent({
       class={`
         font-semibold
         shadow-md
-        ${props.plain ? 'py-[7px] px-[15px]' : 'py-2 px-4'}
-        ${props.raund ? 'rounded-full' : 'rounded-md'}
+        ${props.circle
+          ? 'w-8 h-8 p-0'
+          : props.plain ? 'py-[8px] px-[15px]' : 'py-[9px] px-4'
+        }
+        ${props.raund || props.circle ? 'rounded-full' : 'rounded-md'}
         ${props.type ? (props.plain ? `text-${props.type}` : 'text-white') : 'text-#606266'}
         ${props.plain
           ? `bg-${props.type ? props.type : '#fff'}/30`
@@ -38,8 +55,8 @@ export default defineComponent({
           : 'border-none'}
         cursor-pointer
         text-[14px]
-        
       `}>
+        {renderIcon()}
         {slots.default ? slots.default() : ''}
       </button>
   }

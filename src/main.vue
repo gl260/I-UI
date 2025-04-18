@@ -21,6 +21,14 @@
   <i-button raund type="warning">Warning</i-button>
   <i-button raund type="danger">Danger</i-button>
   <i-button raund type="info">Info</i-button>
+
+  <div style="height: 30px"></div>
+  <i-button icon="search" circle></i-button>
+  <i-button icon="edit" circle type="primary"></i-button>
+  <i-button icon="checkmark" circle type="success"></i-button>
+  <i-button icon="star" circle type="warning"></i-button>
+  <i-button icon="star" circle type="danger"></i-button>
+  <i-button icon="mail" circle type="info"></i-button>
 </template>
 
 <script setup lang="ts">

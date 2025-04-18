@@ -1,6 +1,7 @@
 import { defineConfig, presetWind3, presetAttributify, presetIcons } from "unocss";
 
 const ButtonColors = ['primary', 'success', 'warning', 'danger', 'info'];
+const icons = ['search', 'edit', 'checkmark', 'star', 'mail'];
 const safelist = [
   ...ButtonColors.map((v) => `bg-${v}`),
   'bg-#fff',
@@ -10,6 +11,7 @@ const safelist = [
   ...ButtonColors.map((v) => `hover:bg-${v}/80`),
   ...ButtonColors.map((v) => `border-${v}`),
   ...ButtonColors.map((v) => `text-${v}`),
+  ...icons.map((v) => `i-fluent-${v}-20-regular`),
 ];
 
 export default defineConfig({
