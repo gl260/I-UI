@@ -49,17 +49,19 @@ export default defineComponent({
           : props.plain ? 'py-[8px] px-[15px]' : 'py-[9px] px-4'
         }
         ${props.raund || props.circle ? 'rounded-full' : 'rounded-md'}
-        ${props.type ? (props.plain ? `text-${props.type}` : 'text-white') : 'text-#606266'}
-        ${props.plain
-          ? `bg-${props.type ? props.type : '#fff'}/30`
-          : `bg-${props.type ? props.type : '#fff'}`}
-        hover:bg-${props.type ? props.type : '#fff'}/80
+        ${props.type 
+          ? (props.plain ? `text-${props.type} hover:text-white` 
+          : 'text-white') : 'text-#606266'}
+        bg-${props.type ? props.type : '#fff'}${props.plain ? '/30': ''}
+        hover:bg-${props.type ? props.type : '#fff'}${props.plain ? '': '/80'}
         ${props.plain
           ? `border-1 border-solid ${props.type ? `border-${props.type}` : 'border-[#dcdfe6]'}`
           : 'border-none'}
         cursor-pointer
         text-[14px]
         ${props.disabled ? 'cursor-not-allowed opacity-60' : ''}
+        transition-all
+        duration-200
       `}>
         {renderIcon()}
         {slots.default ? slots.default() : ''}

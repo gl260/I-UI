@@ -9,6 +9,7 @@ const safelist = [
   'bg-#fff/70',
   ...ButtonColors.map((v) => `bg-${v}/30`),
   ...ButtonColors.map((v) => `hover:bg-${v}/80`),
+  ...ButtonColors.map((v) => `hover:bg-${v}`),
   ...ButtonColors.map((v) => `border-${v}`),
   ...ButtonColors.map((v) => `text-${v}`),
   ...icons.map((v) => `i-fluent-${v}-20-regular`),
