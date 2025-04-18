@@ -53,7 +53,7 @@ export default defineComponent({
         ${props.plain
           ? `bg-${props.type ? props.type : '#fff'}/30`
           : `bg-${props.type ? props.type : '#fff'}`}
-        hover:bg-${props.type ? props.type : '#fff'}/70
+        hover:bg-${props.type ? props.type : '#fff'}/80
         ${props.plain
           ? `border-1 border-solid ${props.type ? `border-${props.type}` : 'border-[#dcdfe6]'}`
           : 'border-none'}
