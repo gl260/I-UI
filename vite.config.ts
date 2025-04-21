@@ -24,6 +24,7 @@ export default defineConfig({
   build: {
     rollupOptions,
     minify: false, // 表示禁用代码压缩
+    cssCodeSplit: true, // css 代码分割
     lib: {
       entry: "./src/entry.ts",
       name: "IUI",

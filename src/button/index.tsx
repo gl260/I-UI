@@ -1,4 +1,5 @@
-import { defineComponent, PropType, computed } from "vue";
+import { defineComponent, PropType } from "vue";
+import "uno.css";
 
 export default defineComponent({
   name: "IButton",
