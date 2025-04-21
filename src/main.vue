@@ -45,6 +45,20 @@
   <i-button disabled plain type="warning">Warning</i-button>
   <i-button disabled plain type="danger">Danger</i-button>
   <i-button disabled plain type="info">Info</i-button>
+
+  <div style="height: 30px"></div>
+  <i-button type="primary" size="small">Small</i-button>
+  <i-button type="primary">Default</i-button>
+  <i-button type="primary" size="large">Large</i-button>
+  <i-button plain type="primary" size="small">Small</i-button>
+  <i-button plain type="primary">Default</i-button>
+  <i-button plain type="primary" size="large">Large</i-button>
+  <i-button icon="search" type="success" circle size="small"></i-button>
+  <i-button icon="search" type="success" circle></i-button>
+  <i-button icon="search" type="success" circle size="large"></i-button>
+  <i-button plain icon="search" type="success" circle size="small"></i-button>
+  <i-button plain icon="search" type="success" circle></i-button>
+  <i-button plain icon="search" type="success" circle size="large"></i-button>
 </template>
 
 <script setup lang="ts">
