@@ -50,10 +50,13 @@ export default defineComponent({
         }
         ${props.raund || props.circle ? 'rounded-full' : 'rounded-md'}
         ${props.type 
-          ? (props.plain ? `text-${props.type} hover:text-white` 
-          : 'text-white') : 'text-#606266'}
+          ? (props.plain ? `text-${props.type} ${props.disabled ? '' : 'hover:text-white'}` : 'text-white') 
+          : 'text-#606266'}
         bg-${props.type ? props.type : '#fff'}${props.plain ? '/30': ''}
-        hover:bg-${props.type ? props.type : '#fff'}${props.plain ? '': '/80'}
+        ${props.disabled
+          ? ''
+          : `hover:bg-${props.type ? props.type : '#fff'}${props.plain ? '': '/80'}`
+        }
         ${props.plain
           ? `border-1 border-solid ${props.type ? `border-${props.type}` : 'border-[#dcdfe6]'}`
           : 'border-none'}
