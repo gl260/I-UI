@@ -101,6 +101,7 @@ export default defineComponent({
         inline-flex
         items-center
         justify-center
+        gap-1
       `}>
         {renderIcon()}
         {slots.default ? slots.default() : ''}

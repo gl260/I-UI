@@ -2,7 +2,8 @@
 node_modules
 /dist
 /src/not
-
+/docs/.vitepress/cache
+/docs/.vitepress/dist
 
 # local env files
 .env.local
