@@ -35,8 +35,8 @@ export default defineConfig({
     },
   },
   test:{
-    globals: true,
-    environment: 'happy-dom',
+    globals: true, // 以在测试文件中直接使用Vitest的测试函数
+    environment: 'happy-dom', // 使用happy-dom作为测试环境
     testTransformMode: {
       web: ['.[tj]sx$']
       }

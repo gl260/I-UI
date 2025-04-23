@@ -2,7 +2,7 @@ import { demoblockPlugin, demoblockVitePlugin } from 'vitepress-theme-demoblock'
 import { defineConfig } from 'vitepress'
 const sidebar = {
   '/': [
-    { text: '快速开始', link: '/' },
+    { text: '简介', link: '/' },
     {
       text: 'Basic 基础组件',
       items: [
