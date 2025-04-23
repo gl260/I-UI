@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import IButton from './button/index.tsx'
+import IButton from './button/index.ts'
 
 export { IButton }
 
