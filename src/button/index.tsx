@@ -45,21 +45,21 @@ export default defineComponent({
         case 'small':
           return {
             padding: props.plain ? 'py-[5px] px-[11px]' : 'py-[6px] px-[12px]',
-            fontSize: 'text-[12px]',
+            fontSize: 'text-[12px] h-[24px]',
             circleSize: 'w-[24px] h-[24px] p-0',
             iconSize: 'text-[12px]'
           }
         case 'large':
           return {
             padding: props.plain ? 'py-[12px] px-[19px]' : 'py-[13px] px-[20px]',
-            fontSize: 'text-[14px]',
+            fontSize: 'text-[14px] h-[40px]',
             circleSize: 'w-[40px] h-[40px] p-0',
             iconSize: 'text-[18px]'
           }
         default:
           return {
             padding: props.plain ? 'py-[8px] px-[15px]' : 'py-[9px] px-[16px]',
-            fontSize: 'text-[14px]',
+            fontSize: 'text-[14px] h-[32px]',
             circleSize: 'w-[32px] h-[32px] p-0',
             iconSize: 'text-[14px]'
           }
@@ -70,6 +70,7 @@ export default defineComponent({
 
     return () => 
       <button
+      disabled={props.disabled}
       style={{ 
         lineHeight: '1',
         fontFamily: 'Arial, "Microsoft YaHei", sans-serif', // 统一字体
