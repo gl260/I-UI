@@ -11,6 +11,7 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "test": "vitest",
+    "test:run": "vitest run",
     "lint": "eslint --fix --ext .ts,.tsx,.vue src docs vite.config.ts uno.config.ts",
     "format": "prettier --write \"src/**/*{.ts,.tsx,.vue}\"",
     "prepare": "husky"
