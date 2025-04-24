@@ -26,6 +26,7 @@ export default [
       'demo/**',
       '.vscode/**',
       '*.json',
+      '.husky/**',
     ],
   },
 
