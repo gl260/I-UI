@@ -62,5 +62,5 @@
 </template>
 
 <script setup lang="ts">
-import IButton from './button/button.tsx';
+import IButton from './button/Button.tsx';
 </script>
