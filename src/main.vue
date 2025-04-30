@@ -59,8 +59,28 @@
   <i-button plain icon="search" type="success" circle size="small"></i-button>
   <i-button plain icon="search" type="success" circle></i-button>
   <i-button plain icon="search" type="success" circle size="large"></i-button>
+
+  <div style="height: 30px"></div>
+  <i-button type="primary" loading>搜索</i-button>
+  <i-button type="primary" loading>
+    <template #loading>
+      <i class="i-tabler-loader-3 animate-spin inline-block"></i>
+    </template>
+    自定义搜索
+  </i-button>
 </template>
 
 <script setup lang="ts">
 import IButton from './button/Button.tsx';
 </script>
+
+<style>
+.custom-loading .circular .path {
+  animation: loading-dash 1.5s ease-in-out infinite;
+  stroke-dasharray: 90, 150;
+  stroke-dashoffset: 0;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-linecap: round;
+}
+</style>

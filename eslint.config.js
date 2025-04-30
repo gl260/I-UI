@@ -44,6 +44,8 @@ export default [
         chrome: 'readonly',
         __DEV__: 'readonly',
         process: 'readonly', // 添加 process 全局变量
+        console: 'readonly',
+        document: 'readonly',
         browser: true,
         es2020: true,
         node: true,

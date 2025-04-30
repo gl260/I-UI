@@ -187,3 +187,40 @@
 ```
 
 :::
+
+## 加载状态按钮
+
+<div class="flex items-center gap-3 mt-5">
+  <i-button type="primary" loading>搜索</i-button>
+    <i-button type="primary" raund loading>搜索</i-button>
+    <i-button type="primary" loading>
+      <template #loading>
+        <i class="i-tabler-loader-3 animate-spin inline-block"></i>
+      </template>
+      自定义搜索
+    </i-button>
+</div>
+
+::: tip
+可以使用 loading 插槽自定义loading图标
+ps: loading 插槽优先级高于loading属性
+:::
+
+:::demo 通过设置 loading 属性为 true 来显示加载中状态
+
+```vue
+<template>
+  <div class="flex items-center gap-3 mt-5">
+    <i-button type="primary" loading>搜索</i-button>
+    <i-button type="primary" raund loading>搜索</i-button>
+    <i-button type="primary" loading>
+      <template #loading>
+        <i class="i-tabler-loader-3 animate-spin inline-block"></i>
+      </template>
+      自定义搜索
+    </i-button>
+  </div>
+</template>
+```
+
+:::

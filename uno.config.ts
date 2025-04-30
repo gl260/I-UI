@@ -12,7 +12,7 @@ const safelist = [
   ...ButtonColors.map(v => `hover:bg-${v}`),
   ...ButtonColors.map(v => `border-${v}`),
   ...ButtonColors.map(v => `text-${v}`),
-  ...icons.map(v => `i-fluent-${v}-20-regular`),
+  ...icons.map(v => `i-fluent-${v}-20-regular`), // 注意添加i-前缀
 ];
 
 export default defineConfig({

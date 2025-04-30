@@ -32,11 +32,23 @@ export default defineComponent({
       type: String as PropType<'small' | 'default' | 'large' | ''>,
       default: 'default',
     },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props, { slots }) {
     const renderIcon = () => {
-      if (!props.icon) return null;
-      return <i class={`i-fluent-${props.icon}-20-regular inline-block ${sizeClass.iconSize}`}></i>;
+      if (!props.icon && !props.loading) return null;
+      if (props.loading) {
+        if (slots.loading) {
+          return slots.loading();
+        }
+        return <i class={`i-tabler-loader-2 animate-spin ${sizeClass.iconSize}`}></i>;
+      }
+      if (props.icon) {
+        return <i class={`i-fluent-${props.icon}-20-regular ${sizeClass.iconSize}`}></i>;
+      }
     };
 
     const getSizeClass = () => {
@@ -69,9 +81,9 @@ export default defineComponent({
 
     return () => (
       <button
-        disabled={props.disabled}
+        disabled={props.disabled || props.loading}
         style={{
-          lineHeight: '1',
+          // lineHeight: '1',
           fontFamily: 'Arial, "Microsoft YaHei", sans-serif', // 统一字体
         }}
         class={`
@@ -85,7 +97,7 @@ export default defineComponent({
         ${props.plain ? `border-1 border-solid ${props.type ? `border-${props.type}` : 'border-[#dcdfe6]'}` : 'border-none'}
         cursor-pointer
         ${sizeClass.fontSize}
-        ${props.disabled ? 'cursor-not-allowed opacity-60' : ''}
+        ${props.disabled || props.loading ? 'cursor-not-allowed opacity-60' : ''}
         transition-all
         duration-200
         inline-flex
