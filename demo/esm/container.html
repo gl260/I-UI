@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Demo</h2>
+  <div id="app"></div>
+  <link rel="stylesheet" href="../../dist/entry.css">
+  <script type="module">
+    import { createApp } from 'vue'
+    import IUI, { IButton, IContainer, IAside, IFooter, IHeader, IMain } from '../../dist/i-ui.js'
+
+    createApp({
+      template: `
+        <i-container>
+          <i-aside>Aside</i-aside>
+          <i-container>
+            <i-header>Header</i-header>
+            <i-main>Main</i-main>
+            <i-footer>Footer</i-footer>
+          </i-container>
+        </i-container>
+      `
+    }).use(IUI).mount('#app')
+  </script>
+</body>
+
+</html>
