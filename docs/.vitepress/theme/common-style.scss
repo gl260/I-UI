@@ -23,11 +23,5 @@
 
 table {
   width: 100% !important;
-}
-tr thead tbody {
-  width: 100% !important;
-}
-th,
-td {
-  word-break: break-all;
+  display: revert !important;
 }
