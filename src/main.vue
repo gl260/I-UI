@@ -71,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-import IButton from './button/Button.tsx';
+import IButton from './basic/button/Button.tsx';
 </script>
 
 <style>
