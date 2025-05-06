@@ -27,4 +27,16 @@ export default defineConfig({
       info: '#909399',
     },
   },
+  preflights: [
+    {
+      getCSS: () => `
+        :root {
+          --i-color-primary: #b558f6;
+          --i-color-primary-3:rgba(181,88,246,0.3);
+          --i-color-primary-5:rgba(181,88,246,0.5);
+          --i-color-primary-7: rgba(181,88,246,0.7);
+        }
+      `,
+    },
+  ],
 });
