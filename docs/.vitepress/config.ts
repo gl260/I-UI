@@ -5,7 +5,10 @@ const sidebar = {
     { text: '简介', link: '/' },
     {
       text: 'Basic 基础组件',
-      items: [{ text: 'Button 按钮', link: '/components/basic/button' }],
+      items: [
+        { text: 'Button 按钮', link: '/components/basic/button' },
+        { text: 'Container 布局容器', link: '/components/basic/container' },
+      ],
     },
     { text: 'Form 表单组件' },
     { text: 'Data 数据展示' },

@@ -1,0 +1,33 @@
+.common-layout {
+  .i-header {
+    background-color: var(--i-color-primary-7);
+  }
+  .i-main {
+    background-color: var(--i-color-primary-3);
+  }
+  .i-footer {
+    background-color: var(--i-color-primary-7);
+  }
+  .i-aside {
+    background-color: var(--i-color-primary-5);
+  }
+  .i-aside,
+  .i-header,
+  .i-main,
+  .i-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+table {
+  width: 100% !important;
+}
+tr thead tbody {
+  width: 100% !important;
+}
+th,
+td {
+  word-break: break-all;
+}

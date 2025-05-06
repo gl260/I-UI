@@ -1,7 +1,7 @@
 import DefaultTheme from 'vitepress/theme';
 import 'uno.css';
 import IUI from '../../../src/entry';
-
+import './common-style.scss';
 import 'vitepress-theme-demoblock/dist/theme/styles/index.css';
 import { useComponents } from './useComponents';
 
