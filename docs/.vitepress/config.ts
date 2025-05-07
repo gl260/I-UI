@@ -31,7 +31,7 @@ const sidebar = {
 
 const nav = [
   { text: '指南', link: '/guide/' },
-  { text: '组件', link: '/components/basic/button/' },
+  { text: '组件', link: '/components/basic/button/', activeMatch: '/components/' },
 ];
 
 export default defineConfig({
@@ -41,6 +41,9 @@ export default defineConfig({
     lastUpdated,
     nav,
     sidebar,
+    search: {
+      provider: 'local',
+    },
   },
   markdown: {
     config: md => {
