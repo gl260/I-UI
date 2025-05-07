@@ -23,6 +23,7 @@ const sidebar = {
       items: [
         { text: 'Button 按钮', link: '/components/basic/button/' },
         { text: 'Container 布局容器', link: '/components/basic/container/' },
+        { text: 'Layout 布局', link: '/components/basic/layout/' },
       ],
     },
   ],

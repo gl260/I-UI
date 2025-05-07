@@ -21,6 +21,21 @@
   }
 }
 
+.grid-item {
+  border-radius: 4px;
+  min-height: 36px;
+  width: 100%;
+}
+.bg-2 {
+  background-color: var(--i-color-primary-2);
+}
+.bg-4 {
+  background-color: var(--i-color-primary-4);
+}
+.bg-6 {
+  background-color: var(--i-color-primary-6);
+}
+
 table {
   width: 100% !important;
   display: revert !important;
