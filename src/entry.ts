@@ -1,8 +1,10 @@
 import { App } from 'vue';
+import './style/class.scss';
 import IButton from './basic/button/index.ts';
 import { IContainer, IAside, IFooter, IHeader, IMain } from './basic/container/index.ts';
+import { IRow, ICol } from './basic/layout/index.ts';
 
-export { IButton, IContainer, IAside, IFooter, IHeader, IMain };
+export { IButton, IContainer, IAside, IFooter, IHeader, IMain, IRow, ICol };
 
 export default {
   install(app: App): void {
@@ -12,5 +14,7 @@ export default {
     app.component(IFooter.name, IFooter);
     app.component(IHeader.name, IHeader);
     app.component(IMain.name, IMain);
+    app.component(IRow.name, IRow);
+    app.component(ICol.name, ICol);
   },
 };

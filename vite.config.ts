@@ -25,14 +25,19 @@ export default defineConfig({
   build: {
     rollupOptions,
     minify: 'terser', // boolean(false禁用代码压缩) | 'terser' | 'esbuild'
-    cssCodeSplit: true, // css 代码分割
+    cssCodeSplit: false, // css 代码分割
     // sourcemap: true, // 输出单独 source文件
     lib: {
       entry: './src/entry.ts',
       name: 'IUI',
-      fileName: 'i-ui',
-      // 导出模块格式
-      formats: ['es', 'umd', 'iife'],
+      // fileName: 'i-ui',
+      fileName: (format, entryName) => {
+        if (entryName === 'style') {
+          return 'style.css'; // 样式文件输出名称
+        }
+        return `i-ui.${format}.js`; // JS 文件输出名称
+      },
+      formats: ['es', 'umd', 'iife'], // 导出模块格式
     },
   },
   test: {
@@ -42,4 +47,4 @@ export default defineConfig({
       web: ['.[tj]sx$'],
     },
   },
-});
+} as any);

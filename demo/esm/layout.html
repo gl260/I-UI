@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js"
+      }
+    }
+  </script>
+  <style>
+    .grid-item {
+      border-radius: 4px;
+      min-height: 36px;
+      width: 100%;
+    }
+
+    .bg-2 {
+      background-color: var(--i-color-primary-2);
+    }
+
+    .bg-4 {
+      background-color: var(--i-color-primary-4);
+    }
+
+    .bg-6 {
+      background-color: var(--i-color-primary-6);
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Demo</h2>
+  <div id="app"></div>
+  <link rel="stylesheet" href="../../dist/style.css">
+  <script type="module">
+    import { createApp } from 'vue'
+    import IUI, { IRow, ICol } from '../../dist/i-ui.es.js'
+
+    createApp({
+      template: `
+      <i-row class="mb-[16px]">
+        <i-col :span="24"><div class="grid-item bg-6"></div></i-col>
+      </i-row>
+      <i-row class="mb-[16px]">
+        <i-col :span="12"><div class="grid-item bg-2"></div></i-col>
+        <i-col :span="12"><div class="grid-item bg-4"></div></i-col>
+      </i-row>
+      <i-row class="mb-[16px]">
+        <i-col :span="8"><div class="grid-item bg-4"></div></i-col>
+        <i-col :span="8"><div class="grid-item bg-2"></div></i-col>
+        <i-col :span="8"><div class="grid-item bg-4"></div></i-col>
+      </i-row>
+      <i-row class="mb-[16px]">
+        <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+        <i-col :span="6"><div class="grid-item bg-2"></div></i-col>
+        <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+        <i-col :span="6"><div class="grid-item bg-2"></div></i-col>
+      </i-row>
+      <i-row class="mb-[16px]">
+        <i-col :span="4"><div class="grid-item bg-4"></div></i-col>
+        <i-col :span="4"><div class="grid-item bg-2"></div></i-col>
+        <i-col :span="4"><div class="grid-item bg-4"></div></i-col>
+        <i-col :span="4"><div class="grid-item bg-2"></div></i-col>
+        <i-col :span="4"><div class="grid-item bg-4"></div></i-col>
+        <i-col :span="4"><div class="grid-item bg-2"></div></i-col>
+      </i-row>
+
+      <i-row :gutter="16" class="mb-[16px]">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]" justify="center">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]" justify="end">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]" justify="space-between">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]" justify="space-around">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]" justify="space-evenly">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+      `
+    }).use(IUI).mount('#app')
+  </script>
+</body>
+
+</html>

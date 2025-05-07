@@ -25,7 +25,7 @@ export default defineComponent({
           paddingRight: `${gutter.value / 2}px`,
           marginLeft: `${(props.offset * 100) / 24}%`,
         }}
-        class={`i-col  i-col-${props.span} ${gutter.value ? 'is-gutter' : ''} box-border`}
+        class={`i-col i-col-${props.span} ${gutter.value ? 'is-gutter' : ''} box-border`}
       >
         {slots.default?.()}
       </div>
