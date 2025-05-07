@@ -6,7 +6,7 @@ hero:
   text: 基于 Vue 3 的 UI 库
   tagline: Lorem ipsum...
   image:
-    src: /longtu.png
+    src: /img/longtu.png
     alt: I-UI
   actions:
     - theme: brand
