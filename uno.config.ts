@@ -1,7 +1,10 @@
-import { defineConfig, presetWind3, presetAttributify, presetIcons } from 'unocss';
+import { defineConfig, presetWind3, presetAttributify, presetIcons, Rule } from 'unocss';
 
 const ButtonColors = ['primary', 'success', 'warning', 'danger', 'info'];
 const icons = ['search', 'edit', 'checkmark', 'star', 'mail'];
+const gridClasses = Array(24)
+  .fill(0)
+  .map((_, i) => `i-col-${i + 1}`);
 const safelist = [
   ...ButtonColors.map(v => `bg-${v}`),
   'bg-#fff',
@@ -13,7 +16,23 @@ const safelist = [
   ...ButtonColors.map(v => `border-${v}`),
   ...ButtonColors.map(v => `text-${v}`),
   ...icons.map(v => `i-fluent-${v}-20-regular`), // 注意添加i-前缀
+  ...gridClasses,
 ];
+
+// 生成栅格规则
+const gridRules: Rule[] = Array(24)
+  .fill(0)
+  .map((_, i) => {
+    const span = i + 1;
+    const width = (span * 100) / 24;
+    return [
+      `i-col-${span}`,
+      {
+        flex: `0 0 ${width}%`,
+        'max-width': `${width}%`,
+      },
+    ];
+  });
 
 export default defineConfig({
   presets: [presetWind3(), presetAttributify(), presetIcons()],
@@ -27,6 +46,7 @@ export default defineConfig({
       info: '#909399',
     },
   },
+  rules: gridRules,
   preflights: [
     {
       getCSS: () => `

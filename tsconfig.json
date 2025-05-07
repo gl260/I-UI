@@ -1,17 +1,21 @@
 {
   "compilerOptions": {
-      "declaration": true, /* 生成相关的 '.d.ts' 文件。 */
-      "declarationDir": "./dist/types", /* '.d.ts' 文件输出目录 */
-      "jsx": "preserve",
-      "allowImportingTsExtensions": true,
-      "noEmit": true
+    "target": "ESNext", // 使用最新的 ECMAScript 特性
+    "module": "ESNext", // 使用最新的模块系统
+    "moduleResolution": "bundler",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"], // 包含所有需要的库
+    "declaration": true, /* 生成相关的 '.d.ts' 文件。 */
+    "declarationDir": "./dist/types", /* '.d.ts' 文件输出目录 */
+    "jsx": "preserve",
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   },
   "include": [
-      "./**/*.*",
-      "./shims-vue.d.ts",
+    "./**/*.*",
+    "./shims-vue.d.ts",
   ],
   "exclude": [
-      "node_modules"
+    "node_modules"
   ],
   "esModuleInterop": true,
   "allowSyntheticDefaultImports": "true",
