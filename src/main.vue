@@ -45,7 +45,7 @@
       <i-col :span="4"><div class="grid-item bg-6"></div></i-col>
     </i-row> -->
 
-    <i-row :gutter="16" class="mb-[16px]">
+    <!-- <i-row :gutter="16" class="mb-[16px]">
       <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
       <i-col :span="6" :offset="6"><div class="grid-item bg-6"></div></i-col>
     </i-row>
@@ -55,6 +55,37 @@
     </i-row>
     <i-row :gutter="16" class="mb-[16px]">
       <i-col :span="12" :offset="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row> -->
+
+    <i-row :gutter="16" class="mb-[16px]">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]" justify="center">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]" justify="end">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]" justify="space-between">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]" justify="space-around">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]" justify="space-evenly">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-4"></div></i-col>
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
     </i-row>
   </div>
 </template>
