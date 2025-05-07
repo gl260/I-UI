@@ -34,7 +34,7 @@
       <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
     </i-row> -->
 
-    <i-row :gutter="16" class="mb-[16px]">
+    <!-- <i-row :gutter="16" class="mb-[16px]">
       <i-col :span="16"><div class="grid-item bg-6"></div></i-col>
       <i-col :span="8"><div class="grid-item bg-6"></div></i-col>
     </i-row>
@@ -43,6 +43,18 @@
       <i-col :span="8"><div class="grid-item bg-6"></div></i-col>
       <i-col :span="4"><div class="grid-item bg-6"></div></i-col>
       <i-col :span="4"><div class="grid-item bg-6"></div></i-col>
+    </i-row> -->
+
+    <i-row :gutter="16" class="mb-[16px]">
+      <i-col :span="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6" :offset="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]">
+      <i-col :span="6" :offset="6"><div class="grid-item bg-6"></div></i-col>
+      <i-col :span="6" :offset="6"><div class="grid-item bg-6"></div></i-col>
+    </i-row>
+    <i-row :gutter="16" class="mb-[16px]">
+      <i-col :span="12" :offset="6"><div class="grid-item bg-6"></div></i-col>
     </i-row>
   </div>
 </template>

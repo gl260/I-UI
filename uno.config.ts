@@ -58,7 +58,7 @@ export default defineConfig({
           --i-color-primary-4:rgba(181,88,246,0.4);
           --i-color-primary-5:rgba(181,88,246,0.5);
           --i-color-primary-6:rgba(181,88,246,0.6);
-          --i-color-primary-7: rgba(181,88,246,0.7);
+          --i-color-primary-7:rgba(181,88,246,0.7);
         }
       `,
     },

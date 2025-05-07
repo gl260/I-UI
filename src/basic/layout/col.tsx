@@ -8,6 +8,10 @@ export default defineComponent({
       type: Number,
       default: 24,
     },
+    offset: {
+      type: Number,
+      default: 0,
+    },
   },
   setup(props, { slots }) {
     // 注入 gutter 值
@@ -19,6 +23,7 @@ export default defineComponent({
           width: `${(props.span * 100) / 24}%`,
           paddingLeft: `${gutter.value / 2}px`,
           paddingRight: `${gutter.value / 2}px`,
+          marginLeft: `${(props.offset * 100) / 24}%`,
         }}
         class={`i-col  i-col-${props.span} ${gutter.value ? 'is-gutter' : ''} box-border`}
       >
