@@ -4,7 +4,7 @@ layout: home
 hero:
   name: I-UI
   text: 基于 Vue 3 的 UI 库
-  tagline: Lorem ipsum...
+  tagline: 简单、高效、易用
   image:
     src: /img/longtu.png
     alt: I-UI

@@ -1,0 +1,331 @@
+:root {
+  --vp-c-linear: #b558f6;
+  --vp-c-brand-next: #f25c71;
+}
+
+@keyframes rainbow {
+  0% {
+    --vp-c-linear: #b558f6;
+    --vp-c-brand-next: #f25c71;
+  }
+  1.25% {
+    --vp-c-linear: #aa78e3;
+    --vp-c-brand-next: #f15e69;
+  }
+  2.5% {
+    --vp-c-linear: #b574dd;
+    --vp-c-brand-next: #ef6061;
+  }
+  3.75% {
+    --vp-c-linear: #be71d7;
+    --vp-c-brand-next: #ed635a;
+  }
+  5% {
+    --vp-c-linear: #c76dd1;
+    --vp-c-brand-next: #eb6552;
+  }
+  6.25% {
+    --vp-c-linear: #cf69c9;
+    --vp-c-brand-next: #e8694b;
+  }
+  7.5% {
+    --vp-c-linear: #d566c2;
+    --vp-c-brand-next: #e46c44;
+  }
+  8.75% {
+    --vp-c-linear: #dc63ba;
+    --vp-c-brand-next: #e06f3d;
+  }
+  10% {
+    --vp-c-linear: #e160b3;
+    --vp-c-brand-next: #db7336;
+  }
+  11.25% {
+    --vp-c-linear: #e65eab;
+    --vp-c-brand-next: #d77630;
+  }
+  12.5% {
+    --vp-c-linear: #e95ca2;
+    --vp-c-brand-next: #d17a2a;
+  }
+  13.75% {
+    --vp-c-linear: #ed5a9a;
+    --vp-c-brand-next: #cc7d24;
+  }
+  15% {
+    --vp-c-linear: #ef5992;
+    --vp-c-brand-next: #c6811e;
+  }
+  16.25% {
+    --vp-c-linear: #f15989;
+    --vp-c-brand-next: #bf8418;
+  }
+  17.5% {
+    --vp-c-linear: #f25981;
+    --vp-c-brand-next: #b98713;
+  }
+  18.75% {
+    --vp-c-linear: #f25a79;
+    --vp-c-brand-next: #b28a0f;
+  }
+  20% {
+    --vp-c-linear: #f25c71;
+    --vp-c-brand-next: #ab8d0c;
+  }
+  21.25% {
+    --vp-c-linear: #f15e69;
+    --vp-c-brand-next: #a3900b;
+  }
+  22.5% {
+    --vp-c-linear: #ef6061;
+    --vp-c-brand-next: #9c920d;
+  }
+  23.75% {
+    --vp-c-linear: #ed635a;
+    --vp-c-brand-next: #949510;
+  }
+  25% {
+    --vp-c-linear: #eb6552;
+    --vp-c-brand-next: #8b9715;
+  }
+  26.25% {
+    --vp-c-linear: #e8694b;
+    --vp-c-brand-next: #83991b;
+  }
+  27.5% {
+    --vp-c-linear: #e46c44;
+    --vp-c-brand-next: #7a9b21;
+  }
+  28.75% {
+    --vp-c-linear: #e06f3d;
+    --vp-c-brand-next: #719d27;
+  }
+  30% {
+    --vp-c-linear: #db7336;
+    --vp-c-brand-next: #679e2e;
+  }
+  31.25% {
+    --vp-c-linear: #d77630;
+    --vp-c-brand-next: #5da035;
+  }
+  32.5% {
+    --vp-c-linear: #d17a2a;
+    --vp-c-brand-next: #51a13c;
+  }
+  33.75% {
+    --vp-c-linear: #cc7d24;
+    --vp-c-brand-next: #44a244;
+  }
+  35% {
+    --vp-c-linear: #c6811e;
+    --vp-c-brand-next: #34a44b;
+  }
+  36.25% {
+    --vp-c-linear: #bf8418;
+    --vp-c-brand-next: #1ba553;
+  }
+  37.5% {
+    --vp-c-linear: #b98713;
+    --vp-c-brand-next: #00a65b;
+  }
+  38.75% {
+    --vp-c-linear: #b28a0f;
+    --vp-c-brand-next: #00a663;
+  }
+  40% {
+    --vp-c-linear: #ab8d0c;
+    --vp-c-brand-next: #00a76c;
+  }
+  41.25% {
+    --vp-c-linear: #a3900b;
+    --vp-c-brand-next: #00a874;
+  }
+  42.5% {
+    --vp-c-linear: #9c920d;
+    --vp-c-brand-next: #00a87d;
+  }
+  43.75% {
+    --vp-c-linear: #949510;
+    --vp-c-brand-next: #00a985;
+  }
+  45% {
+    --vp-c-linear: #8b9715;
+    --vp-c-brand-next: #00a98e;
+  }
+  46.25% {
+    --vp-c-linear: #83991b;
+    --vp-c-brand-next: #00a996;
+  }
+  47.5% {
+    --vp-c-linear: #7a9b21;
+    --vp-c-brand-next: #00a99f;
+  }
+  48.75% {
+    --vp-c-linear: #719d27;
+    --vp-c-brand-next: #00a9a7;
+  }
+  50% {
+    --vp-c-linear: #679e2e;
+    --vp-c-brand-next: #00a9b0;
+  }
+  51.25% {
+    --vp-c-linear: #5da035;
+    --vp-c-brand-next: #00a9b8;
+  }
+  52.5% {
+    --vp-c-linear: #51a13c;
+    --vp-c-brand-next: #00a9c0;
+  }
+  53.75% {
+    --vp-c-linear: #44a244;
+    --vp-c-brand-next: #00a8c7;
+  }
+  55% {
+    --vp-c-linear: #34a44b;
+    --vp-c-brand-next: #00a8cf;
+  }
+  56.25% {
+    --vp-c-linear: #1ba553;
+    --vp-c-brand-next: #00a7d5;
+  }
+  57.5% {
+    --vp-c-linear: #00a65b;
+    --vp-c-brand-next: #00a6dc;
+  }
+  58.75% {
+    --vp-c-linear: #00a663;
+    --vp-c-brand-next: #00a6e2;
+  }
+  60% {
+    --vp-c-linear: #00a76c;
+    --vp-c-brand-next: #00a4e7;
+  }
+  61.25% {
+    --vp-c-linear: #00a874;
+    --vp-c-brand-next: #00a3ec;
+  }
+  62.5% {
+    --vp-c-linear: #00a87d;
+    --vp-c-brand-next: #00a2f1;
+  }
+  63.75% {
+    --vp-c-linear: #00a985;
+    --vp-c-brand-next: #00a0f4;
+  }
+  65% {
+    --vp-c-linear: #00a98e;
+    --vp-c-brand-next: #009ff7;
+  }
+  66.25% {
+    --vp-c-linear: #00a98e;
+    --vp-c-brand-next: #009ff7;
+  }
+  67.5% {
+    --vp-c-linear: #00a996;
+    --vp-c-brand-next: #009dfa;
+  }
+  68.75% {
+    --vp-c-linear: #00a99f;
+    --vp-c-brand-next: #009bfc;
+  }
+  70% {
+    --vp-c-linear: #00a9a7;
+    --vp-c-brand-next: #0098fd;
+  }
+  71.25% {
+    --vp-c-linear: #00a9b0;
+    --vp-c-brand-next: #0096fd;
+  }
+  72.5% {
+    --vp-c-linear: #00a9b8;
+    --vp-c-brand-next: #0093fd;
+  }
+  73.75% {
+    --vp-c-linear: #00a9c0;
+    --vp-c-brand-next: #2e90fc;
+  }
+  75% {
+    --vp-c-linear: #00a8c7;
+    --vp-c-brand-next: #4d8dfa;
+  }
+  76.25% {
+    --vp-c-linear: #00a8cf;
+    --vp-c-brand-next: #638af8;
+  }
+  77.5% {
+    --vp-c-linear: #00a7d5;
+    --vp-c-brand-next: #7587f5;
+  }
+  78.75% {
+    --vp-c-linear: #00a6dc;
+    --vp-c-brand-next: #8583f1;
+  }
+  80% {
+    --vp-c-linear: #00a6e2;
+    --vp-c-brand-next: #9280ed;
+  }
+  81.25% {
+    --vp-c-linear: #00a4e7;
+    --vp-c-brand-next: #9f7ce9;
+  }
+  82.5% {
+    --vp-c-linear: #00a3ec;
+    --vp-c-brand-next: #aa78e3;
+  }
+  83.75% {
+    --vp-c-linear: #00a2f1;
+    --vp-c-brand-next: #b574dd;
+  }
+  85% {
+    --vp-c-linear: #00a0f4;
+    --vp-c-brand-next: #be71d7;
+  }
+  86.25% {
+    --vp-c-linear: #009ff7;
+    --vp-c-brand-next: #c76dd1;
+  }
+  87.5% {
+    --vp-c-linear: #009dfa;
+    --vp-c-brand-next: #cf69c9;
+  }
+  88.75% {
+    --vp-c-linear: #009bfc;
+    --vp-c-brand-next: #d566c2;
+  }
+  90% {
+    --vp-c-linear: #0098fd;
+    --vp-c-brand-next: #dc63ba;
+  }
+  91.25% {
+    --vp-c-linear: #0096fd;
+    --vp-c-brand-next: #e160b3;
+  }
+  92.5% {
+    --vp-c-linear: #0093fd;
+    --vp-c-brand-next: #e65eab;
+  }
+  93.75% {
+    --vp-c-linear: #2e90fc;
+    --vp-c-brand-next: #e95ca2;
+  }
+  95% {
+    --vp-c-linear: #4d8dfa;
+    --vp-c-brand-next: #ed5a9a;
+  }
+  96.25% {
+    --vp-c-linear: #638af8;
+    --vp-c-brand-next: #ef5992;
+  }
+  97.5% {
+    --vp-c-linear: #7587f5;
+    --vp-c-brand-next: #f15989;
+  }
+  98.75% {
+    --vp-c-linear: #8583f1;
+    --vp-c-brand-next: #f25981;
+  }
+  100% {
+    --vp-c-linear: #9280ed;
+    --vp-c-brand-next: #f25a79;
+  }
+}
