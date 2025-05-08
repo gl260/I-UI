@@ -105,5 +105,6 @@ export default defineConfig({
   },
   vite: {
     plugins: [demoblockVitePlugin()],
+    publicDir: 'public',
   },
 });
