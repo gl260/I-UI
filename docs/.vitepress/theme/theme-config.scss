@@ -1,11 +1,29 @@
 :root {
+  // 主题色
   --vp-c-brand-1: #b558f6;
   --vp-c-brand-2: #bd6bf8;
   --vp-c-brand-3: #c375fa;
 
+  // 首页标题
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: linear-gradient(135deg, #f5bee7 20%, #b558f6 100%);
 
+  // 首页图片背景
   --vp-home-hero-image-background-image: linear-gradient(135deg, #f5bee7 20%, #b558f6 100%);
   --vp-home-hero-image-filter: blur(150px);
+
+  // demo分割线
+  --vp-c-divider: rgba(5, 5, 5, 0.06);
+}
+
+// 导航栏标题
+.VPNavBarTitle .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.VPNavBarTitle .title span {
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #b558f6 20%, #f5bee7 100%);
 }

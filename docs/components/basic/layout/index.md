@@ -122,7 +122,7 @@
 
 默认使用 flex 布局来对分栏进行灵活的对齐。
 
-您可以通过justify 属性来定义子元素的排版方式，其取值为`start`、`center`、`end`、`space-between`、`space-around`或`space-evenly`。
+可以通过justify 属性来定义子元素的排版方式，其取值为`start`、`center`、`end`、`space-between`、`space-around`或`space-evenly`。
 
 :::demo
 
