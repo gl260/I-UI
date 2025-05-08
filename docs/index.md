@@ -1,5 +1,7 @@
 ---
 layout: home
+title: I-UI
+description: 简单、高效、易用的 Vue 3 UI 组件库
 
 hero:
   name: I-UI

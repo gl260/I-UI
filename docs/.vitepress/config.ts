@@ -79,7 +79,7 @@ const nav = [
 ];
 
 export default defineConfig({
-  // title: 'I-UI',
+  title: 'I-UI',
   themeConfig: {
     siteTitle: 'I-UI',
     lastUpdated,
