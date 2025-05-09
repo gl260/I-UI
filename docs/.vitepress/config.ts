@@ -15,7 +15,16 @@ const lastUpdated = {
 };
 
 const sidebar = {
-  '/guide/': [{ text: '指南', link: '/guide/' }],
+  '/guide/': [
+    {
+      text: '基础',
+      items: [
+        { text: '设计', link: '/guide/design.md' },
+        { text: '安装', link: '/guide/installation.md' },
+        { text: '快速开始', link: '/guide/quickstart.md' },
+      ],
+    },
+  ],
   '/components/': [
     {
       text: 'Basic 基础组件',
@@ -74,7 +83,7 @@ const sidebar = {
 };
 
 const nav = [
-  { text: '指南', link: '/guide/' },
+  { text: '指南', link: '/guide/design.md', activeMatch: '/guide/' },
   { text: '组件', link: '/components/basic/button/', activeMatch: '/components/' },
 ];
 
