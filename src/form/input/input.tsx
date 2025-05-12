@@ -27,6 +27,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    rows: {
+      type: Number,
+      default: 2,
+    },
   },
   emits: ['update:modelValue'],
   setup(props, { slots, emit }) {
@@ -96,10 +100,9 @@ export default defineComponent({
 
     return () => (
       <div
-        style={{ width: '200px' }}
+        style={{ width: '220px' }}
         class={`
           i-input
-          h-[32px]
           box-border
           relative
           border-1
@@ -109,32 +112,65 @@ export default defineComponent({
           text-#606266
           rounded-[6px]
           focus-within:border-${props.disabled ? '#dcdfe6' : 'primary'}
-          ${props.disabled ? 'bg-#f5f7fa' : ''}`}
+          ${props.disabled ? 'bg-#f5f7fa' : ''}
+          flex
+          items-stretch
+        `}
       >
-        <input
-          type={inputType.value}
-          value={props.modelValue}
-          onInput={handleInput}
-          disabled={props.disabled}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          placeholder={props.placeholder}
-          class={`
-            i-input__inner
-            box-border
-            color-#000/88
-            w-full
-            h-full
-            ${slots.prefix ? 'pl-[28px]' : 'pl-[12px]'}
-            ${slots.suffix || props.clearable || props.showPassword ? 'pr-[28px]' : 'pr-[12px]'}
-            py-[4px]
-            m-0
-            border-none
-            text-[14px]
-            outline-none
-            rounded-[6px]
-            ${props.disabled ? 'cursor-not-allowed' : ''}`}
-        />
+        {props.type == 'textarea' ? (
+          <textarea
+            value={props.modelValue}
+            onInput={handleInput}
+            disabled={props.disabled}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            placeholder={props.placeholder}
+            rows={props.rows}
+            style={{ resize: 'vertical' }}
+            class={`
+              i-input__inner
+              box-border
+              color-#000/88
+              w-full
+              h-full
+              leading-normal
+              px-[12px]
+              py-[4px]
+              m-0
+              border-none
+              text-[14px]
+              outline-none
+              rounded-[6px]
+              ${props.disabled ? 'cursor-not-allowed' : ''}
+            `}
+          />
+        ) : (
+          <input
+            type={inputType.value}
+            value={props.modelValue}
+            onInput={handleInput}
+            disabled={props.disabled}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            placeholder={props.placeholder}
+            class={`
+              i-input__inner
+              box-border
+              color-#000/88
+              w-full
+              h-[30px]
+              ${slots.prefix ? 'pl-[28px]' : 'pl-[12px]'}
+              ${slots.suffix || props.clearable || props.showPassword ? 'pr-[28px]' : 'pr-[12px]'}
+              py-[4px]
+              m-0
+              border-none
+              text-[14px]
+              outline-none
+              rounded-[6px]
+              ${props.disabled ? 'cursor-not-allowed' : ''}
+            `}
+          />
+        )}
         {handleClear()}
         {handlePassword()}
         {handleSuffix()}
@@ -143,3 +179,10 @@ export default defineComponent({
     );
   },
 });
+
+// resize-none: 禁用 textarea 的拖拽调整大小功能
+// resize-vertical: 允许垂直调整大小
+// UnoCSS 中的行高预设值：
+// leading-normal --> lineHeight: '1.5'
+// leading-none --> lineHeight: '1'
+// flex 和 items-stretch(align-items: stretch) 让子元素填充整个高度

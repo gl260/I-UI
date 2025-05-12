@@ -13,6 +13,8 @@
         <i class="i-line-md-emoji-smile"></i>
       </template>
     </i-input>
+    <i-input v-model="value" type="textarea" :rows="2" placeholder="Please input" />
+    <i-input v-model="value" disabled type="textarea" :rows="2" placeholder="Please input" />
     <h2>{{ value }}</h2>
   </div>
 </template>

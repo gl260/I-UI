@@ -1,20 +1,22 @@
 import { defineConfig, presetWind3, presetAttributify, presetIcons, Rule } from 'unocss';
 
-const ButtonColors = ['primary', 'success', 'warning', 'danger', 'info'];
+const themeColors = ['primary', 'success', 'warning', 'danger', 'info'];
 const icons = ['search', 'edit', 'checkmark', 'star', 'mail'];
 const gridClasses = Array(24)
   .fill(0)
   .map((_, i) => `i-col-${i + 1}`);
 const safelist = [
-  ...ButtonColors.map(v => `bg-${v}`),
+  ...themeColors.map(v => `bg-${v}`),
   'bg-#fff',
   'bg-#fff/30',
   'bg-#fff/70',
-  ...ButtonColors.map(v => `bg-${v}/30`),
-  ...ButtonColors.map(v => `hover:bg-${v}/80`),
-  ...ButtonColors.map(v => `hover:bg-${v}`),
-  ...ButtonColors.map(v => `border-${v}`),
-  ...ButtonColors.map(v => `text-${v}`),
+  ...themeColors.map(v => `bg-${v}/30`),
+  ...themeColors.map(v => `hover:bg-${v}/80`),
+  ...themeColors.map(v => `hover:bg-${v}`),
+  ...themeColors.map(v => `border-${v}`),
+  ...themeColors.map(v => `text-${v}`),
+  ...themeColors.map(v => `hover:border-${v}`),
+  ...themeColors.map(v => `focus-within:border-${v}`),
   ...icons.map(v => `i-fluent-${v}-20-regular`), // 注意添加i-前缀
   ...gridClasses,
 ];
