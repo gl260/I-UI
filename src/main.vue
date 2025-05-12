@@ -3,6 +3,8 @@
     <i-input placeholder="Please input" />
     <i-input disabled placeholder="Please input" />
     <i-input v-model="value" clearable placeholder="Please input" />
+    <i-input v-model="value" type="password" placeholder="Please input" />
+    <i-input v-model="value" type="password" show-password placeholder="Please input" />
     <h2>{{ value }}</h2>
   </div>
 </template>

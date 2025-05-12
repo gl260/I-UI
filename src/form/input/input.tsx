@@ -1,4 +1,4 @@
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, computed } from 'vue';
 import 'uno.css';
 export default defineComponent({
   name: 'IInput',
@@ -19,6 +19,14 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    type: {
+      type: String,
+      default: 'text',
+    },
+    showPassword: {
+      type: Boolean,
+      default: false,
+    },
   },
   emits: ['update:modelValue'],
   setup(props, { emit }) {
@@ -28,23 +36,53 @@ export default defineComponent({
       emit('update:modelValue', target.value);
     };
 
+    // clearable
     const isFocus = ref(false);
     const handleFocus = () => (isFocus.value = true);
     const handleBlur = () => (isFocus.value = false);
-    const handleClearBtn = () => emit('update:modelValue', '');
+    const handleClearIcon = () => emit('update:modelValue', '');
     const handleClear = () => {
       if (props.disabled || !props.clearable) return;
       if (!isFocus.value || !props.modelValue) return;
       return (
         <span
           class={`flex absolute right-[12px] top-[50%] translate-y-[-50%]`}
-          onClick={handleClearBtn}
+          onClick={handleClearIcon}
           onMousedown={(e: any) => e.preventDefault()}
         >
           <i class={`i-ic-outline-cancel w-[14px] h-[14px] cursor-pointer text-#c0c4cc hover:text-#909399`}></i>
         </span>
       );
     };
+
+    // 密码框
+    const isPassword = ref(false);
+    const handlePasswordIcon = () => {
+      isPassword.value = !isPassword.value;
+    };
+    const handlePassword = () => {
+      if (props.type !== 'password' || !props.modelValue) return;
+      if (!props.showPassword) return;
+      return (
+        <span class={`flex absolute right-[12px] top-[50%] translate-y-[-50%]`} onClick={handlePasswordIcon}>
+          <i
+            class={`${isPassword.value ? 'i-line-md-watch' : 'i-line-md-watch-off'}
+            w-[14px]
+            h-[14px]
+            cursor-pointer
+            text-#c0c4cc
+            hover:text-#909399`}
+          ></i>
+        </span>
+      );
+    };
+
+    const inputType = computed(() => {
+      if (props.type === 'password') {
+        return isPassword.value ? 'text' : 'password';
+      }
+      return props.type;
+    });
 
     return () => (
       <div
@@ -64,7 +102,7 @@ export default defineComponent({
           ${props.disabled ? 'bg-#f5f7fa' : ''}`}
       >
         <input
-          type="text"
+          type={inputType.value}
           value={props.modelValue}
           onInput={handleInput}
           disabled={props.disabled}
@@ -87,6 +125,7 @@ export default defineComponent({
             ${props.disabled ? 'cursor-not-allowed' : ''}`}
         />
         {handleClear()}
+        {handlePassword()}
       </div>
     );
   },
