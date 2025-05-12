@@ -29,7 +29,7 @@ export default defineComponent({
     },
   },
   emits: ['update:modelValue'],
-  setup(props, { emit }) {
+  setup(props, { slots, emit }) {
     const handleInput = (e: any) => {
       if (props.disabled) return;
       const target = e.target as any;
@@ -84,6 +84,16 @@ export default defineComponent({
       return props.type;
     });
 
+    const handleSuffix = () => {
+      if (!slots.suffix) return;
+      return <span class={`flex absolute right-[12px] top-[50%] translate-y-[-50%]`}>{slots.suffix()}</span>;
+    };
+
+    const handlePrefix = () => {
+      if (!slots.prefix) return;
+      return <span class={`flex absolute left-[12px] top-[50%] translate-y-[-50%]`}>{slots.prefix()}</span>;
+    };
+
     return () => (
       <div
         style={{ width: '200px' }}
@@ -115,7 +125,8 @@ export default defineComponent({
             color-#000/88
             w-full
             h-full
-            px-[12px]
+            ${slots.prefix ? 'pl-[28px]' : 'pl-[12px]'}
+            ${slots.suffix || props.clearable || props.showPassword ? 'pr-[28px]' : 'pr-[12px]'}
             py-[4px]
             m-0
             border-none
@@ -126,6 +137,8 @@ export default defineComponent({
         />
         {handleClear()}
         {handlePassword()}
+        {handleSuffix()}
+        {handlePrefix()}
       </div>
     );
   },

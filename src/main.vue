@@ -5,6 +5,14 @@
     <i-input v-model="value" clearable placeholder="Please input" />
     <i-input v-model="value" type="password" placeholder="Please input" />
     <i-input v-model="value" type="password" show-password placeholder="Please input" />
+    <i-input v-model="value" placeholder="Please input">
+      <template #suffix>
+        <i class="i-line-md-bell-loop"></i>
+      </template>
+      <template #prefix>
+        <i class="i-line-md-emoji-smile"></i>
+      </template>
+    </i-input>
     <h2>{{ value }}</h2>
   </div>
 </template>
