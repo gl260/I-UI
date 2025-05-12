@@ -31,6 +31,22 @@ export default defineComponent({
       type: Number,
       default: 2,
     },
+    minlength: {
+      type: [String, Number],
+      default: 0,
+    },
+    maxlength: {
+      type: [String, Number],
+      default: 0,
+    },
+    showWordLimit: {
+      type: Boolean,
+      default: false,
+    },
+    // autoSize: {
+    //   type: [Object, Boolean],
+    //   default: () => ({}),
+    // },
   },
   emits: ['update:modelValue'],
   setup(props, { slots, emit }) {
@@ -98,6 +114,14 @@ export default defineComponent({
       return <span class={`flex absolute left-[12px] top-[50%] translate-y-[-50%]`}>{slots.prefix()}</span>;
     };
 
+    const handleWordLimit = () => {
+      if (!props.showWordLimit) return;
+      const value = String(props.modelValue);
+      return <span class={`absolute text-[12px] right-[12px] bottom-[4px]`}>{`${value.length} / ${props.maxlength}`}</span>;
+    };
+
+    // const handleAutoSize = computed(() => {});
+
     return () => (
       <div
         style={{ width: '220px' }}
@@ -126,6 +150,7 @@ export default defineComponent({
             onBlur={handleBlur}
             placeholder={props.placeholder}
             rows={props.rows}
+            maxlength={props.maxlength}
             style={{ resize: 'vertical' }}
             class={`
               i-input__inner
@@ -153,6 +178,8 @@ export default defineComponent({
             onFocus={handleFocus}
             onBlur={handleBlur}
             placeholder={props.placeholder}
+            maxlength={props.maxlength}
+            minlength={props.minlength}
             class={`
               i-input__inner
               box-border
@@ -175,6 +202,7 @@ export default defineComponent({
         {handlePassword()}
         {handleSuffix()}
         {handlePrefix()}
+        {handleWordLimit()}
       </div>
     );
   },

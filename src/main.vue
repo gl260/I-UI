@@ -15,6 +15,7 @@
     </i-input>
     <i-input v-model="value" type="textarea" :rows="2" placeholder="Please input" />
     <i-input v-model="value" disabled type="textarea" :rows="2" placeholder="Please input" />
+    <i-input v-model="value" type="textarea" maxlength="10" show-word-limit placeholder="Please input" />
     <h2>{{ value }}</h2>
   </div>
 </template>
