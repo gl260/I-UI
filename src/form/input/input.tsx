@@ -33,11 +33,11 @@ export default defineComponent({
     },
     minlength: {
       type: [String, Number],
-      default: 0,
+      default: 9999999999,
     },
     maxlength: {
       type: [String, Number],
-      default: 0,
+      default: 9999999999,
     },
     showWordLimit: {
       type: Boolean,
@@ -209,6 +209,8 @@ export default defineComponent({
             onFocus={handleFocus}
             onBlur={handleBlur}
             placeholder={props.placeholder}
+            maxlength={props.maxlength}
+            minlength={props.minlength}
             class={`
               i-input__inner
               box-border
