@@ -1,6 +1,6 @@
 <template>
   <div class="common-layout">
-    <i-input placeholder="Please input" />
+    <!-- <i-input placeholder="Please input" />
     <i-input disabled placeholder="Please input" />
     <i-input v-model="value" clearable placeholder="Please input" />
     <i-input v-model="value" type="password" placeholder="Please input" />
@@ -15,7 +15,19 @@
     </i-input>
     <i-input v-model="value" type="textarea" :rows="2" placeholder="Please input" />
     <i-input v-model="value" disabled type="textarea" :rows="2" placeholder="Please input" />
-    <i-input v-model="value" type="textarea" maxlength="10" show-word-limit placeholder="Please input" />
+    <i-input v-model="value" type="textarea" maxlength="10" show-word-limit placeholder="Please input" /> -->
+
+    <i-input v-model="value" size="small" placeholder="Please input">
+      <template #suffix>
+        <i class="i-line-md-bell-loop"></i>
+      </template>
+    </i-input>
+    <i-input v-model="value" placeholder="Please input" />
+    <i-input v-model="value" size="large" placeholder="Please input">
+      <template #suffix>
+        <i class="i-line-md-bell-loop"></i>
+      </template>
+    </i-input>
     <h2>{{ value }}</h2>
   </div>
 </template>

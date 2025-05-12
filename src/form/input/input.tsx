@@ -47,6 +47,10 @@ export default defineComponent({
     //   type: [Object, Boolean],
     //   default: () => ({}),
     // },
+    size: {
+      type: String,
+      default: 'default',
+    },
   },
   emits: ['update:modelValue'],
   setup(props, { slots, emit }) {
@@ -66,7 +70,7 @@ export default defineComponent({
       if (!isFocus.value || !props.modelValue) return;
       return (
         <span
-          class={`flex absolute right-[12px] top-[50%] translate-y-[-50%]`}
+          class={`flex absolute right-[12px] top-[50%] translate-y-[-50%] ${sizeClass.fontSize}`}
           onClick={handleClearIcon}
           onMousedown={(e: any) => e.preventDefault()}
         >
@@ -84,7 +88,7 @@ export default defineComponent({
       if (props.type !== 'password' || !props.modelValue) return;
       if (!props.showPassword) return;
       return (
-        <span class={`flex absolute right-[12px] top-[50%] translate-y-[-50%]`} onClick={handlePasswordIcon}>
+        <span class={`flex absolute right-[12px] top-[50%] translate-y-[-50%] ${sizeClass.fontSize}`} onClick={handlePasswordIcon}>
           <i
             class={`${isPassword.value ? 'i-line-md-watch' : 'i-line-md-watch-off'}
             w-[14px]
@@ -106,12 +110,12 @@ export default defineComponent({
 
     const handleSuffix = () => {
       if (!slots.suffix) return;
-      return <span class={`flex absolute right-[12px] top-[50%] translate-y-[-50%]`}>{slots.suffix()}</span>;
+      return <span class={`flex absolute right-[12px] top-[50%] translate-y-[-50%] ${sizeClass.fontSize}`}>{slots.suffix()}</span>;
     };
 
     const handlePrefix = () => {
       if (!slots.prefix) return;
-      return <span class={`flex absolute left-[12px] top-[50%] translate-y-[-50%]`}>{slots.prefix()}</span>;
+      return <span class={`flex absolute left-[12px] top-[50%] translate-y-[-50%] ${sizeClass.fontSize}`}>{slots.prefix()}</span>;
     };
 
     const handleWordLimit = () => {
@@ -121,6 +125,33 @@ export default defineComponent({
     };
 
     // const handleAutoSize = computed(() => {});
+
+    const getSizeClass = () => {
+      switch (props.size) {
+        case 'small':
+          return {
+            height: 'h-[24px]',
+            fontSize: 'text-[12px]',
+            paddingRight: 'pr-[26px]',
+            paddingLeft: 'pl-[26px]',
+          };
+        case 'large':
+          return {
+            height: 'h-[40px]',
+            fontSize: 'text-[18px]',
+            paddingRight: 'pr-[32px]',
+            paddingLeft: 'pl-[32px]',
+          };
+        default:
+          return {
+            height: 'h-[32px]',
+            fontSize: 'text-[14px]',
+            paddingRight: 'pr-[28px]',
+            paddingLeft: 'pl-[28px]',
+          };
+      }
+    };
+    const sizeClass = getSizeClass();
 
     return () => (
       <div
@@ -178,20 +209,18 @@ export default defineComponent({
             onFocus={handleFocus}
             onBlur={handleBlur}
             placeholder={props.placeholder}
-            maxlength={props.maxlength}
-            minlength={props.minlength}
             class={`
               i-input__inner
               box-border
               color-#000/88
               w-full
-              h-[30px]
-              ${slots.prefix ? 'pl-[28px]' : 'pl-[12px]'}
-              ${slots.suffix || props.clearable || props.showPassword ? 'pr-[28px]' : 'pr-[12px]'}
+              ${sizeClass.height}
+              ${sizeClass.fontSize}
+              ${slots.prefix ? sizeClass.paddingLeft : 'pl-[12px]'}
+              ${slots.suffix || props.clearable || props.showPassword ? sizeClass.paddingRight : 'pr-[12px]'}
               py-[4px]
               m-0
               border-none
-              text-[14px]
               outline-none
               rounded-[6px]
               ${props.disabled ? 'cursor-not-allowed' : ''}
