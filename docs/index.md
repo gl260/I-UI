@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /guide/
+      link: /guide/design
     - theme: alt
       text: 组件
       link: /components/basic/button/
