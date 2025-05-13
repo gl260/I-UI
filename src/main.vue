@@ -1,6 +1,6 @@
 <template>
   <div class="common-layout">
-    <i-input placeholder="Please input" />
+    <!-- <i-input placeholder="Please input" />
     <i-input disabled placeholder="Please input" />
     <i-input v-model="value" clearable placeholder="Please input" />
     <i-input v-model="value" type="password" placeholder="Please input" />
@@ -40,7 +40,9 @@
       <template #prefix>
         <i class="i-line-md-emoji-neutral"></i>
       </template>
-    </i-input>
+    </i-input> -->
+
+    <i-input v-model="value" clearable placeholder="Please input" @blur="handleBlur" @focus="handleFocus" />
     <h2>{{ value }}</h2>
   </div>
 </template>
@@ -61,6 +63,14 @@ import { ref } from 'vue';
 import IInput from './form/input/input.tsx';
 
 const value = ref<string>('22222');
+
+const handleBlur = (e: any) => {
+  console.log('去焦点时触发: blur', e);
+};
+
+const handleFocus = (e: any) => {
+  console.log('获取焦点时触发: focus', e);
+};
 </script>
 
 <style lang="scss" scoped></style>

@@ -84,18 +84,25 @@ export default defineComponent({
       default: 0,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'blur', 'focus'],
   setup(props, { slots, emit }) {
+    const isFocus = ref(false);
+
     const handleInput = (e: any) => {
       if (props.disabled) return;
       const target = e.target as any;
       emit('update:modelValue', target.value);
     };
 
-    // clearable
-    const isFocus = ref(false);
-    const handleFocus = () => (isFocus.value = true);
-    const handleBlur = () => (isFocus.value = false);
+    const handleBlur = (e: any) => {
+      isFocus.value = false;
+      emit('blur', e);
+    };
+
+    const handleFocus = (e: any) => {
+      isFocus.value = true;
+      emit('focus', e);
+    };
     const handleClearIcon = () => emit('update:modelValue', '');
     const handleClear = () => {
       if (props.disabled || !props.clearable) return;
@@ -111,7 +118,6 @@ export default defineComponent({
       );
     };
 
-    // 密码框
     const isPassword = ref(false);
     const handlePasswordIcon = () => {
       isPassword.value = !isPassword.value;
