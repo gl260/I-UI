@@ -1,7 +1,7 @@
-import IContainer from './container.jsx';
-import IAside from './aside.jsx';
-import IFooter from './footer.jsx';
-import IHeader from './header.jsx';
-import IMain from './main.jsx';
+import IContainer from './container';
+import IAside from './aside';
+import IFooter from './footer';
+import IHeader from './header';
+import IMain from './main';
 
 export { IContainer, IAside, IFooter, IHeader, IMain };

@@ -1,4 +1,4 @@
-import IRow from './row.tsx';
-import ICol from './col.tsx';
+import IRow from './row';
+import ICol from './col';
 
 export { IRow, ICol };

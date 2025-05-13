@@ -1,3 +1,3 @@
-import IInput from './input.tsx';
+import IInput from './input';
 
 export { IInput };
