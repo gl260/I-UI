@@ -176,7 +176,7 @@ export default defineComponent({
     const handleWordLimit = () => {
       if (!props.showWordLimit) return;
       const value = String(props.modelValue);
-      return <span class={`absolute text-[12px] right-[12px] bottom-[4px]`}>{`${value.length} / ${props.maxlength}`}</span>;
+      return <span class={`absolute text-[12px] right-[12px] bottom-[4px] leading-none`}>{`${value.length} / ${props.maxlength}`}</span>;
     };
 
     // const handleAutoSize = computed(() => {});
