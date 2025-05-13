@@ -33,11 +33,11 @@ export default defineComponent({
     },
     minlength: {
       type: [String, Number],
-      default: 9999999999,
+      default: 0,
     },
     maxlength: {
       type: [String, Number],
-      default: 9999999999,
+      default: 0,
     },
     showWordLimit: {
       type: Boolean,
@@ -54,6 +54,34 @@ export default defineComponent({
     status: {
       type: String,
       default: '',
+    },
+    autocomplete: {
+      type: String,
+      default: 'off',
+    },
+    name: {
+      type: String,
+      default: '',
+    },
+    readonly: {
+      type: Boolean,
+      default: false,
+    },
+    min: {
+      type: [String, Number],
+      default: 0,
+    },
+    max: {
+      type: [String, Number],
+      default: 0,
+    },
+    autofocus: {
+      type: Boolean,
+      default: false,
+    },
+    step: {
+      type: [String, Number],
+      default: 0,
     },
   },
   emits: ['update:modelValue'],
@@ -217,7 +245,7 @@ export default defineComponent({
             onBlur={handleBlur}
             placeholder={props.placeholder}
             rows={props.rows}
-            maxlength={props.maxlength}
+            {...(props.maxlength ? { maxlength: props.maxlength } : {})}
             style={{ resize: 'vertical' }}
             class={`
               i-input__inner
@@ -245,8 +273,15 @@ export default defineComponent({
             onFocus={handleFocus}
             onBlur={handleBlur}
             placeholder={props.placeholder}
-            maxlength={props.maxlength}
-            minlength={props.minlength}
+            {...(props.minlength ? { minlength: props.minlength } : {})}
+            {...(props.maxlength ? { maxlength: props.maxlength } : {})}
+            autocomplete={props.autocomplete}
+            {...(props.name ? { name: props.name } : {})}
+            {...(props.readonly ? { readonly: props.readonly } : {})}
+            {...(props.min ? { min: props.min } : {})}
+            {...(props.max ? { max: props.max } : {})}
+            {...(props.autofocus ? { autofocus: props.autofocus } : {})}
+            {...(props.step ? { step: props.step } : {})}
             class={`
               i-input__inner
               box-border

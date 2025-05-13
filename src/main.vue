@@ -1,6 +1,6 @@
 <template>
   <div class="common-layout">
-    <!-- <i-input placeholder="Please input" />
+    <i-input placeholder="Please input" />
     <i-input disabled placeholder="Please input" />
     <i-input v-model="value" clearable placeholder="Please input" />
     <i-input v-model="value" type="password" placeholder="Please input" />
@@ -27,7 +27,7 @@
       <template #suffix>
         <i class="i-line-md-bell-loop"></i>
       </template>
-    </i-input> -->
+    </i-input>
 
     <i-input v-model="value" status="error" placeholder="Error" />
     <i-input v-model="value" status="warning" placeholder="Warning" />
@@ -60,7 +60,7 @@ import { ref } from 'vue';
 
 import IInput from './form/input/input.tsx';
 
-const value = ref<string>('');
+const value = ref<string>('22222');
 </script>
 
 <style lang="scss" scoped></style>
