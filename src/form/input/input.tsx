@@ -51,6 +51,10 @@ export default defineComponent({
       type: String,
       default: 'default',
     },
+    status: {
+      type: String,
+      default: '',
+    },
   },
   emits: ['update:modelValue'],
   setup(props, { slots, emit }) {
@@ -110,12 +114,20 @@ export default defineComponent({
 
     const handleSuffix = () => {
       if (!slots.suffix) return;
-      return <span class={`flex absolute right-[12px] top-[50%] translate-y-[-50%] ${sizeClass.fontSize}`}>{slots.suffix()}</span>;
+      return (
+        <span class={`flex absolute right-[10px] top-[50%] translate-y-[-50%] ${sizeClass.fontSize} ${statusClass.color}`}>
+          {slots.suffix()}
+        </span>
+      );
     };
 
     const handlePrefix = () => {
       if (!slots.prefix) return;
-      return <span class={`flex absolute left-[12px] top-[50%] translate-y-[-50%] ${sizeClass.fontSize}`}>{slots.prefix()}</span>;
+      return (
+        <span class={`flex absolute left-[10px] top-[50%] translate-y-[-50%] ${sizeClass.fontSize} ${statusClass.color}`}>
+          {slots.prefix()}
+        </span>
+      );
     };
 
     const handleWordLimit = () => {
@@ -153,6 +165,30 @@ export default defineComponent({
     };
     const sizeClass = getSizeClass();
 
+    const getStatusClass = () => {
+      switch (props.status) {
+        case 'error':
+          return {
+            borderColor: 'border-danger',
+            hoverBorderColor: 'danger',
+            color: 'text-danger',
+          };
+        case 'warning':
+          return {
+            borderColor: 'border-warning',
+            hoverBorderColor: 'warning',
+            color: 'text-warning',
+          };
+        default:
+          return {
+            borderColor: 'border-#dcdfe6',
+            hoverBorderColor: 'primary',
+            color: 'text-#606266',
+          };
+      }
+    };
+    const statusClass = getStatusClass();
+
     return () => (
       <div
         style={{ width: '220px' }}
@@ -162,11 +198,11 @@ export default defineComponent({
           relative
           border-1
           border-solid
-          border-#dcdfe6
-          hover:border-${props.disabled ? '#dcdfe6' : 'primary'}
+          ${statusClass.borderColor}
+          hover:border-${props.disabled ? '#dcdfe6' : statusClass.hoverBorderColor}
           text-#606266
           rounded-[6px]
-          focus-within:border-${props.disabled ? '#dcdfe6' : 'primary'}
+          focus-within:border-${props.disabled ? '#dcdfe6' : statusClass.hoverBorderColor}
           ${props.disabled ? 'bg-#f5f7fa' : ''}
           flex
           items-stretch

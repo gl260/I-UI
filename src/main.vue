@@ -15,7 +15,7 @@
     </i-input>
     <i-input v-model="value" type="textarea" :rows="2" placeholder="Please input" />
     <i-input v-model="value" disabled type="textarea" :rows="2" placeholder="Please input" />
-    <i-input v-model="value" type="textarea" maxlength="10" show-word-limit placeholder="Please input" /> -->
+    <i-input v-model="value" type="textarea" maxlength="10" show-word-limit placeholder="Please input" />
 
     <i-input v-model="value" size="small" placeholder="Please input">
       <template #suffix>
@@ -26,6 +26,19 @@
     <i-input v-model="value" size="large" placeholder="Please input">
       <template #suffix>
         <i class="i-line-md-bell-loop"></i>
+      </template>
+    </i-input> -->
+
+    <i-input v-model="value" status="error" placeholder="Error" />
+    <i-input v-model="value" status="warning" placeholder="Warning" />
+    <i-input v-model="value" status="error" placeholder="Error">
+      <template #prefix>
+        <i class="i-line-md-emoji-frown"></i>
+      </template>
+    </i-input>
+    <i-input v-model="value" status="warning" placeholder="Warning">
+      <template #prefix>
+        <i class="i-line-md-emoji-neutral"></i>
       </template>
     </i-input>
     <h2>{{ value }}</h2>
