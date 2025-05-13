@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Demo</h2>
+  <div id="app"></div>
+  <link rel="stylesheet" href="../../dist/style.css">
+  <script type="module">
+    import { createApp } from 'vue'
+    import IUI, { IInput } from '../../dist/i-ui.es.js'
+
+    createApp({
+      template: `
+        <i-input placeholder="Please input" />
+        <i-input disabled placeholder="Please input" />
+        <i-input v-model="value" clearable placeholder="Please input" />
+        <i-input v-model="value" type="password" placeholder="Please input" />
+        <i-input v-model="value" type="password" show-password placeholder="Please input" />
+        <i-input v-model="value" placeholder="Please input">
+          <template #suffix>
+            <i class="i-line-md-bell-loop"></i>
+          </template>
+          <template #prefix>
+            <i class="i-line-md-emoji-smile"></i>
+          </template>
+        </i-input>
+        <i-input v-model="value" type="textarea" :rows="2" placeholder="Please input" />
+        <i-input v-model="value" disabled type="textarea" :rows="2" placeholder="Please input" />
+        <i-input v-model="value" type="textarea" maxlength="10" show-word-limit placeholder="Please input" />
+
+        <i-input v-model="value" size="small" placeholder="Please input">
+          <template #suffix>
+            <i class="i-line-md-bell-loop"></i>
+          </template>
+        </i-input>
+        <i-input v-model="value" placeholder="Please input" />
+        <i-input v-model="value" size="large" placeholder="Please input">
+          <template #suffix>
+            <i class="i-line-md-bell-loop"></i>
+          </template>
+        </i-input>
+
+        <i-input v-model="value" status="error" placeholder="Error" />
+        <i-input v-model="value" status="warning" placeholder="Warning" />
+        <i-input v-model="value" status="error" placeholder="Error">
+          <template #prefix>
+            <i class="i-line-md-emoji-frown"></i>
+          </template>
+        </i-input>
+        <i-input v-model="value" status="warning" placeholder="Warning">
+          <template #prefix>
+            <i class="i-line-md-emoji-neutral"></i>
+          </template>
+        </i-input>
+      `
+    }).use(IUI).mount('#app')
+  </script>
+</body>
+
+</html>

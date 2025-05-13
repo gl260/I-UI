@@ -5,6 +5,7 @@ const icons = ['search', 'edit', 'checkmark', 'star', 'mail'];
 const gridClasses = Array(24)
   .fill(0)
   .map((_, i) => `i-col-${i + 1}`);
+const lineMd = ['i-line-md-bell-loop', 'i-line-md-emoji-smile', 'i-line-md-emoji-frown', 'i-line-md-emoji-neutral'];
 const safelist = [
   ...themeColors.map(v => `bg-${v}`),
   'bg-#fff',
@@ -19,6 +20,7 @@ const safelist = [
   ...themeColors.map(v => `focus-within:border-${v}`),
   ...icons.map(v => `i-fluent-${v}-20-regular`), // 注意添加i-前缀
   ...gridClasses,
+  ...lineMd,
 ];
 
 // 生成栅格规则
