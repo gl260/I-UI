@@ -84,32 +84,35 @@ export default defineComponent({
       default: 0,
     },
   },
-  emits: ['update:modelValue', 'blur', 'focus', 'change'],
+  emits: ['update:modelValue', 'blur', 'focus', 'change', 'clear'],
   setup(props, { slots, emit }) {
     const isFocus = ref(false);
 
-    const handleInput = (e: any) => {
+    const handleInputEvent = (e: any) => {
       if (props.disabled) return;
       const target = e.target as any;
       emit('update:modelValue', target.value);
     };
 
-    const handleChange = (e: any) => {
+    const handleChangeEvent = (e: any) => {
       if (props.disabled) return;
       const target = e.target as any;
       emit('change', target.value);
     };
 
-    const handleBlur = (e: any) => {
+    const handleBlurEvent = (e: any) => {
       isFocus.value = false;
       emit('blur', e);
     };
 
-    const handleFocus = (e: any) => {
+    const handleFocusEvent = (e: any) => {
       isFocus.value = true;
       emit('focus', e);
     };
-    const handleClearIcon = () => emit('update:modelValue', '');
+    const handleClearIcon = () => {
+      emit('update:modelValue', '');
+      emit('clear');
+    };
     const handleClear = () => {
       if (props.disabled || !props.clearable) return;
       if (!isFocus.value || !props.modelValue) return;
@@ -251,10 +254,10 @@ export default defineComponent({
         {props.type == 'textarea' ? (
           <textarea
             value={props.modelValue}
-            onInput={handleInput}
+            onInput={handleInputEvent}
             disabled={props.disabled}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
+            onFocus={handleFocusEvent}
+            onBlur={handleBlurEvent}
             placeholder={props.placeholder}
             rows={props.rows}
             {...(props.maxlength ? { maxlength: props.maxlength } : {})}
@@ -280,11 +283,11 @@ export default defineComponent({
           <input
             type={inputType.value}
             value={props.modelValue}
-            onInput={handleInput}
+            onInput={handleInputEvent}
             disabled={props.disabled}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onChange={handleChange}
+            onFocus={handleFocusEvent}
+            onBlur={handleBlurEvent}
+            onChange={handleChangeEvent}
             placeholder={props.placeholder}
             {...(props.minlength ? { minlength: props.minlength } : {})}
             {...(props.maxlength ? { maxlength: props.maxlength } : {})}
