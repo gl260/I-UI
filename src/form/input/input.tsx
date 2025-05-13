@@ -84,7 +84,7 @@ export default defineComponent({
       default: 0,
     },
   },
-  emits: ['update:modelValue', 'blur', 'focus'],
+  emits: ['update:modelValue', 'blur', 'focus', 'change'],
   setup(props, { slots, emit }) {
     const isFocus = ref(false);
 
@@ -92,6 +92,12 @@ export default defineComponent({
       if (props.disabled) return;
       const target = e.target as any;
       emit('update:modelValue', target.value);
+    };
+
+    const handleChange = (e: any) => {
+      if (props.disabled) return;
+      const target = e.target as any;
+      emit('change', target.value);
     };
 
     const handleBlur = (e: any) => {
@@ -278,6 +284,7 @@ export default defineComponent({
             disabled={props.disabled}
             onFocus={handleFocus}
             onBlur={handleBlur}
+            onChange={handleChange}
             placeholder={props.placeholder}
             {...(props.minlength ? { minlength: props.minlength } : {})}
             {...(props.maxlength ? { maxlength: props.maxlength } : {})}

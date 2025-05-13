@@ -42,7 +42,7 @@
       </template>
     </i-input> -->
 
-    <i-input v-model="value" clearable placeholder="Please input" @blur="handleBlur" @focus="handleFocus" />
+    <i-input v-model="value" clearable placeholder="Please input" @blur="handleBlur" @focus="handleFocus" @change="handleChange" />
     <h2>{{ value }}</h2>
   </div>
 </template>
@@ -70,6 +70,10 @@ const handleBlur = (e: any) => {
 
 const handleFocus = (e: any) => {
   console.log('获取焦点时触发: focus', e);
+};
+
+const handleChange = (e: any) => {
+  console.log('输入框内容变化时触发: change', e);
 };
 </script>
 
