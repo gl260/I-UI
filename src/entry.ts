@@ -1,6 +1,6 @@
 import { App } from 'vue';
 import './style/class.scss';
-import IButton from './basic/button/index.ts';
+import { IButton } from './basic/button/index.ts';
 import { IContainer, IAside, IFooter, IHeader, IMain } from './basic/container/index.ts';
 import { IRow, ICol } from './basic/layout/index.ts';
 import { IInput } from './form/input/index.ts';

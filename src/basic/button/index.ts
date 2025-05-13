@@ -1,3 +1,3 @@
-import Button from './button.tsx';
+import IButton from './button.tsx';
 
-export default Button;
+export { IButton };
