@@ -4,8 +4,9 @@ import { IButton } from './basic/button/index.ts';
 import { IContainer, IAside, IFooter, IHeader, IMain } from './basic/container/index.ts';
 import { IRow, ICol } from './basic/layout/index.ts';
 import { IInput } from './form/input/index.ts';
+import { IRadio, IRadioGroup } from './form/radio/index.ts';
 
-export { IButton, IContainer, IAside, IFooter, IHeader, IMain, IRow, ICol, IInput };
+export { IButton, IContainer, IAside, IFooter, IHeader, IMain, IRow, ICol, IInput, IRadio, IRadioGroup };
 
 export default {
   install(app: App): void {
@@ -18,5 +19,7 @@ export default {
     app.component(IRow.name, IRow);
     app.component(ICol.name, ICol);
     app.component(IInput.name, IInput);
+    app.component(IRadio.name, IRadio);
+    app.component(IRadioGroup.name, IRadioGroup);
   },
 };

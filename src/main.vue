@@ -1,57 +1,9 @@
 <template>
   <div class="common-layout">
-    <!-- <i-input placeholder="Please input" />
-    <i-input disabled placeholder="Please input" />
-    <i-input v-model="value" clearable placeholder="Please input" />
-    <i-input v-model="value" type="password" placeholder="Please input" />
-    <i-input v-model="value" type="password" show-password placeholder="Please input" />
-    <i-input v-model="value" placeholder="Please input">
-      <template #suffix>
-        <i class="i-line-md-bell-loop"></i>
-      </template>
-      <template #prefix>
-        <i class="i-line-md-emoji-smile"></i>
-      </template>
-    </i-input>
-    <i-input v-model="value" type="textarea" :rows="2" placeholder="Please input" />
-    <i-input v-model="value" disabled type="textarea" :rows="2" placeholder="Please input" />
-    <i-input v-model="value" type="textarea" maxlength="10" show-word-limit placeholder="Please input" />
-
-    <i-input v-model="value" size="small" placeholder="Please input">
-      <template #suffix>
-        <i class="i-line-md-bell-loop"></i>
-      </template>
-    </i-input>
-    <i-input v-model="value" placeholder="Please input" />
-    <i-input v-model="value" size="large" placeholder="Please input">
-      <template #suffix>
-        <i class="i-line-md-bell-loop"></i>
-      </template>
-    </i-input>
-
-    <i-input v-model="value" status="error" placeholder="Error" />
-    <i-input v-model="value" status="warning" placeholder="Warning" />
-    <i-input v-model="value" status="error" placeholder="Error">
-      <template #prefix>
-        <i class="i-line-md-emoji-frown"></i>
-      </template>
-    </i-input>
-    <i-input v-model="value" status="warning" placeholder="Warning">
-      <template #prefix>
-        <i class="i-line-md-emoji-neutral"></i>
-      </template>
-    </i-input> -->
-
-    <i-input
-      v-model="value"
-      clearable
-      placeholder="Please input"
-      @blur="handleBlur"
-      @focus="handleFocus"
-      @change="handleChange"
-      @clear="handleClear"
-    />
-    <h2>{{ value }}</h2>
+    <i-radio-group v-model="value">
+      <i-radio value="1">大大怪将军</i-radio>
+      <i-radio value="2">小小怪下士</i-radio>
+    </i-radio-group>
   </div>
 </template>
 
@@ -68,25 +20,11 @@ import { ref } from 'vue';
 // import IRow from './basic/layout/row.tsx';
 // import ICol from './basic/layout/col.tsx';
 
-import IInput from './form/input/input.tsx';
+// import IInput from './form/input/input.tsx';
 
-const value = ref<string>('22222');
+import { IRadio, IRadioGroup } from './form/radio/index.ts';
 
-const handleBlur = (e: any) => {
-  console.log('去焦点时触发: blur', e);
-};
-
-const handleFocus = (e: any) => {
-  console.log('获取焦点时触发: focus', e);
-};
-
-const handleChange = (e: any) => {
-  console.log('输入框内容变化时触发: change', e);
-};
-
-const handleClear = () => {
-  console.log('点击清除图标时触发: clear');
-};
+const value = ref<string>('1');
 </script>
 
 <style lang="scss" scoped></style>

@@ -5,7 +5,14 @@ const icons = ['search', 'edit', 'checkmark', 'star', 'mail'];
 const gridClasses = Array(24)
   .fill(0)
   .map((_, i) => `i-col-${i + 1}`);
-const lineMd = ['i-line-md-bell-loop', 'i-line-md-emoji-smile', 'i-line-md-emoji-frown', 'i-line-md-emoji-neutral'];
+const lineMd = [
+  'i-line-md-bell-loop',
+  'i-line-md-emoji-smile',
+  'i-line-md-emoji-frown',
+  'i-line-md-emoji-neutral',
+  'i-line-md-watch',
+  'i-line-md-watch-off',
+];
 const safelist = [
   ...themeColors.map(v => `bg-${v}`),
   'bg-#fff',
