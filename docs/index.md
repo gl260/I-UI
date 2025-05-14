@@ -5,7 +5,7 @@ description: 简单、高效、易用的 Vue 3 UI 组件库
 
 hero:
   name: I-UI
-  text: 基于 Vue 3 的 UI 库
+  text: 基于 Vue 3 的组件库
   tagline: 简单、高效、易用
   image:
     src: /img/longtu.png
