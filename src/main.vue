@@ -3,7 +3,10 @@
     <i-radio-group v-model="value">
       <i-radio value="1">大大怪将军</i-radio>
       <i-radio value="2">小小怪下士</i-radio>
+      <i-radio value="3">尼根</i-radio>
     </i-radio-group>
+    <h1>当前选中：{{ value }}</h1>
+    <i-radio v-model="value" value="1">123</i-radio>
   </div>
 </template>
 

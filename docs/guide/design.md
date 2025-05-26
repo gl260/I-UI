@@ -16,7 +16,7 @@ Eslint Prettier Husky 也没什么好说的，搭建规范项目的基本三件�
 
 什么是 UnoCSS?
 
-废话不多说，直接 3 2 1 上链接😤[点这里](https://antfu.me/posts/reimagine-atomic-css)，英语不好的同学[点这里](https://antfu.me/posts/reimagine-atomic-css-zh)
+废话不多说，直接 3 2 1 上链接😤[点这里](https://antfu.me/posts/reimagine-atomic-css)
 
 上面详细介绍了什么事原子化CSS，以及相比于Tailwind CSS/Windi CSS，UnoCSS的优势
 
@@ -52,7 +52,7 @@ Vitest 诞生的初衷，便是为了让测试能力能更便捷地集成到 Vit
 
 - JSX 与 TypeScript 的集成更紧密(tsx)
 
-- JSX 的编程能力、类型友好性和灵活性使其成为**组件库开发的更优选择**(许多基于Vue的组件库也都是使用的JSX语法)。
+- JSX 的编程能力、类型友好性和灵活性使其成为**组件库开发的更优选择**(许多基于Vue的组件库也都是使用的JSX语法)，但是[element plus](https://github.com/element-plus/element-plus/tree/dev/packages/components)用的是vue模板语法。
 
 - 不过对于业务层开发，vue模板语法仍是推荐的首选方案
 
