@@ -1,5 +1,4 @@
 import { defineConfig, presetWind3, presetAttributify, presetIcons, Rule } from 'unocss';
-import './src/style/common.scss';
 
 const themeColors = ['primary', 'success', 'warning', 'danger', 'info'];
 const icons = ['search', 'edit', 'checkmark', 'star', 'mail'];
