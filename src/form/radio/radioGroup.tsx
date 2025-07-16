@@ -1,5 +1,6 @@
 import { defineComponent, provide, ref, watch } from 'vue';
 import 'uno.css';
+import './radioButton.scss';
 export default defineComponent({
   name: 'IRadioGroup',
   props: {
@@ -11,7 +12,6 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup(props, { slots, emit }) {
     const radioGroupValue = ref(props.modelValue);
-
     provide('radioGroupValue', radioGroupValue);
     provide('radioGroupchange', (v: string | number | boolean) => {
       radioGroupValue.value = v;
@@ -26,8 +26,6 @@ export default defineComponent({
       },
     );
 
-    console.log('radioGroup', radioGroupValue.value);
-
-    return () => <div class="i-radio-group">{slots.default?.()}</div>;
+    return () => <div class="i-radio-group flex">{slots.default?.()}</div>;
   },
 });
