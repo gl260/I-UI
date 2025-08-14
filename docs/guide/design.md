@@ -10,7 +10,7 @@
 
 组件功能参考了[`Element-Plus`](https://element-plus.org/zh-CN/) [`Ant Design Vue`](https://www.antdv.com/components/overview-cn)
 
-Vite 没什么好说的，速度非常快，用过 Vue2 和 Vue3 的同学都知道，webpack 和 Vite 的速度完全就不是一个量级的(当然依然不可否认webpack是一个非常优秀的打包工具 🐶手动狗头保命)
+Vite 没什么好说的，速度非常快，用过 Vue2 和 Vue3 的同学都知道，webpack 和 Vite 的速度完全就不是一个量级的(当然依然不可否认webpack是一个非常优秀的打包工具)
 
 Eslint Prettier Husky 也没什么好说的，搭建规范项目的基本三件套，使项目更加规范化，其实不用也没有啥关系
 
@@ -18,17 +18,17 @@ Eslint Prettier Husky 也没什么好说的，搭建规范项目的基本三件�
 
 什么是 UnoCSS?
 
-废话不多说，直接上链接😤[点这里](https://antfu.me/posts/reimagine-atomic-css)
+[点这里](https://antfu.me/posts/reimagine-atomic-css)
 
 上面详细介绍了什么事原子化CSS，以及相比于Tailwind CSS/Windi CSS，UnoCSS的优势
 
-UnoCSS 可以比 Tailwind 的 JIT 引擎快 200 倍！😘
+UnoCSS 可以比 Tailwind 的 JIT 引擎快 200 倍！
 
 [Unocss官网](https://unocss.dev/)
 
 这时候就有同学就要问了，vocal！你的首页怎么和Unocss官网的首页渐变效果这么像 抄的吧
 
-毁谤 我告你毁谤啊！借鉴 这是借鉴！而且完整的效果还没借鉴到 惭愧啊
+毁谤 我告你毁谤啊！程序员的那些事儿 那能叫抄吗?
 
 ## Vitest
 
