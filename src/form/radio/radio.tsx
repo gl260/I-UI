@@ -7,6 +7,10 @@ export default defineComponent({
       type: [String, Number, Boolean],
       default: undefined,
     },
+    label: {
+      type: String,
+      default: '',
+    },
     modelValue: {
       type: [String, Number, Boolean],
       default: undefined,
@@ -80,7 +84,7 @@ export default defineComponent({
           ${isChecked() ? 'text-primary' : ''}
           ${props.disabled ? '!text-#c0c4cc' : ''}`}
         >
-          {slots.default?.()}
+          {props.label || slots.default?.()}
         </span>
       </label>
     );

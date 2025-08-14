@@ -4,12 +4,12 @@
       <i-radio-group v-model="value">
         <i-radio value="1">大大怪将军</i-radio>
         <i-radio value="2" disabled>小小怪下士</i-radio>
-        <i-radio value="3" disabled>尼根</i-radio>
+        <i-radio value="3" disabled label="尼根"></i-radio>
       </i-radio-group>
       <i-radio-group v-model="value">
         <i-radio-button value="1">大大怪将军</i-radio-button>
         <i-radio-button value="2">小小怪下士</i-radio-button>
-        <i-radio-button value="3">尼根</i-radio-button>
+        <i-radio-button value="3" label="尼根"></i-radio-button>
       </i-radio-group>
       <i-radio-group v-model="value">
         <i-radio-button value="1">大大怪将军</i-radio-button>

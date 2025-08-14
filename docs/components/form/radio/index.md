@@ -89,11 +89,12 @@ const value = ref<string>('1');
 
 ### RadioGroup Attributes
 
-| 属性名   | 说明           | 类型                            | 默认值 |
-| -------- | -------------- | ------------------------------- | ------ |
-| value    | 单选框的值     | `string` / `number` / `boolean` | --     |
-| disabled | 是否禁用单选框 | `boolean`                       | false  |
-| name     | 原生 name 属性 | `string`                        | --     |
+| 属性名   | 说明                                                 | 类型                            | 默认值 |
+| -------- | ---------------------------------------------------- | ------------------------------- | ------ |
+| value    | 单选框的值                                           | `string` / `number` / `boolean` | --     |
+| label    | 单选框的 label 如果没有 value， label则作为value使用 | `string` / `number` / `boolean` | --     |
+| disabled | 是否禁用单选框                                       | `boolean`                       | false  |
+| name     | 原生 name 属性                                       | `string`                        | --     |
 
 ### RadioGroup Events
 
@@ -105,8 +106,9 @@ const value = ref<string>('1');
 
 ### RadioButton Attributes
 
-| 属性名   | 说明           | 类型                            | 默认值 |
-| -------- | -------------- | ------------------------------- | ------ |
-| value    | 单选框的值     | `string` / `number` / `boolean` | --     |
-| disabled | 是否禁用单选框 | `boolean`                       | false  |
-| name     | 原生 name 属性 | `string`                        | --     |
+| 属性名   | 说明                                                 | 类型                            | 默认值 |
+| -------- | ---------------------------------------------------- | ------------------------------- | ------ |
+| value    | 单选框的值                                           | `string` / `number` / `boolean` | --     |
+| label    | 单选框的 label 如果没有 value， label则作为value使用 | `string` / `number` / `boolean` | --     |
+| disabled | 是否禁用单选框                                       | `boolean`                       | false  |
+| name     | 原生 name 属性                                       | `string`                        | --     |

@@ -8,6 +8,10 @@ export default defineComponent({
       type: [String, Number, Boolean],
       default: undefined,
     },
+    label: {
+      type: String,
+      default: '',
+    },
     modelValue: {
       type: [String, Number, Boolean],
       default: undefined,
@@ -58,7 +62,7 @@ export default defineComponent({
               ${isChecked() ? 'text-white bg-primary' : 'text-#303133 hover:text-primary'}
             `}
           >
-            {slots.default?.()}
+            {props.label || slots.default?.()}
           </span>
         </div>
       </label>
