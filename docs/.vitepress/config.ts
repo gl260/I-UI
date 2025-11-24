@@ -100,7 +100,7 @@ export default defineConfig({
     socialLinks: [{ icon: 'github', link: 'https://github.com/gl260/I-UI' }],
     footer: {
       message: '基于 MIT 许可发布',
-      copyright: 'Copyright (c) 2025 - present <a href="https://github.com/yyx990803">lgl</a>',
+      copyright: 'Copyright (c) 2025 - present <a href="">lgl</a>',
     },
     docFooter: {
       prev: '上一页',

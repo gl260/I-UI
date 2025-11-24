@@ -4,7 +4,7 @@
   "type": "module",
   "description": "",
   "main": "index.js",
-  "homepage": "https://i-ui.vercel.app/",
+  "homepage": "www.i-ui.top",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
