@@ -1,3 +1,1 @@
-# I-UI
-
-A component library developed based on Vite
+<h1 align="center">I-UI</h1>
