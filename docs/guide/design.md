@@ -22,8 +22,6 @@ Eslint Prettier Husky 也没什么好说的，搭建规范项目的基本三件�
 
 上面详细介绍了什么事原子化CSS，以及相比于Tailwind CSS/Windi CSS，UnoCSS的优势
 
-UnoCSS 可以比 Tailwind 的 JIT 引擎快 200 倍！
-
 [Unocss官网](https://unocss.dev/)
 
 这时候就有同学就要问了，vocal！你的首页怎么和Unocss官网的首页渐变效果这么像 抄的吧
