@@ -2,8 +2,6 @@
 
 这是一个基于 Vite 开发的 Vue3 mini版组件库
 
-这个库的架构参照了前端大佬[`然叔`](https://juejin.cn/user/1978776660216136)之前写的小册，但是不知道为啥这个小册现在找不着了
-
 ## 技术栈
 
 用到的技术`TS` `Vite` `Vue3` `tsx` `UnoCSS` `Vitest` `Eslint` `Prettier` `Husky`
