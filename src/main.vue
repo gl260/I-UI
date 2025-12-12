@@ -1,12 +1,8 @@
 <template>
   <div class="common-layout">
-    <i-alert
-      type="success"
-      title="success"
-      description="成功提示的文案成功提示的文案成功提示的文案成功提示的文案成功提示的文案成功提示的文案"
-      closable
-      show-icon
-    ></i-alert>
+    <i-alert type="success" title="success" closable show-icon>
+      成功提示的文案成功提示的文案成功提示的文案成功提示的文案成功提示的文案成功提示的文案
+    </i-alert>
     <i-alert
       type="warning"
       description="警告提示的文案警告提示的文案警告提示的文案警告提示的文案警告提示的文案警告提示的文案"

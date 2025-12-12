@@ -102,7 +102,7 @@ export default defineComponent({
                   {!props.title && handleSlotIcon()}
                   {descriptionIcon()}
                   {props.description}
-                  {slots.description?.()}
+                  {slots.default?.() || slots.description?.()}
                 </div>
               </div>
             </div>
