@@ -69,16 +69,26 @@ export default defineComponent({
         </span>
       );
     };
+
+    const bgColor = () => {
+      const color = {
+        success: 'bg-#f6ffed border-#b7eb8f',
+        warning: 'bg-#fffbe6 border-#ffe58f',
+        danger: 'bg-#fff2f0 border-#ffccc7',
+        info: `bg-${props.type}/20 border-${props.type}`,
+        primary: `bg-${props.type}/20 border-${props.type}`,
+      };
+      return color[props.type];
+    };
     return () => (
       <Transition name="alert-fade">
         {visible.value && (
           <div
             class={`
               i-alert
-              bg-${props.type}/20
               text-[14px] text-#303133
               rounded-md
-              border-1 border-solid border-${props.type} box-border
+              border-1 border-solid ${bgColor()} box-border
               flex ${props.title ? 'items-start p-[14px]' : 'items-center py-[8px] px-[12px]'} justify-between
               relative
             `}
