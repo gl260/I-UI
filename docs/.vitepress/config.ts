@@ -72,7 +72,7 @@ const sidebar = {
     {
       text: 'Feedback 反馈组件',
       items: [
-        { text: 'Alert 警告', link: '/components/feedback/alert/' },
+        { text: 'Alert 提示', link: '/components/feedback/alert/' },
         { text: 'Dialog 对话框', link: '/components/feedback/dialog/' },
         { text: 'Drawer 抽屉', link: '/components/feedback/drawer/' },
         { text: 'Message 消息提示', link: '/components/feedback/message/' },
