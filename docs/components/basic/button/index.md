@@ -90,6 +90,8 @@
     <i-button icon="search" circle></i-button>
     <i-button icon="edit" circle type="primary"></i-button>
     <i-button icon="checkmark" circle type="success"></i-button>
+  </div>
+  <div class="flex gap-3 mt-5">
     <i-button icon="star" type="warning">warning</i-button>
     <i-button icon="star" type="danger">danger</i-button>
     <i-button icon="mail" type="info">info</i-button>

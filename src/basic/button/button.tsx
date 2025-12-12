@@ -92,7 +92,7 @@ export default defineComponent({
         ${props.circle ? sizeClass.circleSize : sizeClass.padding}
         ${props.raund || props.circle ? 'rounded-full' : 'rounded-md'}
         ${props.type ? (props.plain ? `text-${props.type} ${props.disabled ? '' : 'hover:text-white'}` : 'text-white') : 'text-#606266'}
-        bg-${props.type ? props.type : '#fff'}${props.plain ? '/30' : ''}
+        bg-${props.type ? props.type : '#fff'}${props.plain && props.type ? '/30' : ''}
         ${props.disabled ? '' : `hover:bg-${props.type ? props.type : '#fff'}${props.plain ? '' : '/80'}`}
         ${props.plain ? `border-1 border-solid ${props.type ? `border-${props.type}` : 'border-[#dcdfe6]'}` : 'border-none'}
         cursor-pointer
@@ -104,6 +104,7 @@ export default defineComponent({
         items-center
         justify-center
         gap-1
+        whitespace-nowrap
       `}
       >
         {renderIcon()}

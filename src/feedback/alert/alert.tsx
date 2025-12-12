@@ -75,8 +75,8 @@ export default defineComponent({
         success: 'bg-#f6ffed border-#b7eb8f',
         warning: 'bg-#fffbe6 border-#ffe58f',
         danger: 'bg-#fff2f0 border-#ffccc7',
-        info: `bg-${props.type}/20 border-${props.type}`,
-        primary: `bg-${props.type}/20 border-${props.type}`,
+        info: `bg-#e9e9eb border-${props.type}`,
+        primary: `bg-#f0defd border-${props.type}`,
       };
       return color[props.type];
     };
