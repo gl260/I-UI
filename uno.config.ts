@@ -19,6 +19,7 @@ const safelist = [
   'bg-#fff/30',
   'bg-#fff/70',
   ...themeColors.map(v => `bg-${v}/30`),
+  ...themeColors.map(v => `bg-${v}/20`),
   ...themeColors.map(v => `hover:bg-${v}/80`),
   ...themeColors.map(v => `hover:bg-${v}`),
   ...themeColors.map(v => `border-${v}`),

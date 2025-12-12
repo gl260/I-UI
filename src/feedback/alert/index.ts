@@ -1,3 +1,3 @@
-// import IAlert from './alert';
+import IAlert from './alert';
 
-// export { IAlert };
+export { IAlert };
