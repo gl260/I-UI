@@ -221,9 +221,13 @@ const createMessageManager = (): MessageFunction => {
    * 用法: IMessage({ message: 'xxx', type: 'success' })
    * @param options 消息配置对象
    */
-  const messageFn = ((options: { type: 'success' | 'warning' | 'danger' | 'info'; message: string; duration: number }) => {
-    const { type = 'info', message, duration } = options;
-    show(type, message, duration);
+  const messageFn = ((options: { type: 'success' | 'warning' | 'danger' | 'info'; message: string; duration: number } | string) => {
+    if (typeof options === 'string') {
+      show('info', options, 3000);
+    } else {
+      const { type = 'info', message, duration } = options;
+      show(type, message, duration);
+    }
   }) as MessageFunction;
 
   messageFn.success = (message: string, duration: number = 3000) => {

@@ -28,7 +28,8 @@ import IButton from './basic/button/button.tsx';
 import { IMessage } from './feedback/message/index.ts';
 
 const info = () => {
-  IMessage({ message: '这是一条信息', type: 'info' });
+  // IMessage({ message: '这是一条信息', type: 'info' });
+  IMessage('这是一条信息');
 };
 const success = () => {
   IMessage({ message: '这是一条成功信息', type: 'success' });
