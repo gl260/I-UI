@@ -9,11 +9,11 @@ export interface MessageOptions {
 }
 
 export interface MessageFunction {
-  (options: MessageOptions | string): void;
-  info: (message: string, duration?: number) => void;
-  success: (message: string, duration?: number) => void;
-  warning: (message: string, duration?: number) => void;
-  danger: (message: string, duration?: number) => void;
+  (options: MessageOptions | string): Promise<void>;
+  info: (message: string, duration?: number) => Promise<void>;
+  success: (message: string, duration?: number) => Promise<void>;
+  warning: (message: string, duration?: number) => Promise<void>;
+  danger: (message: string, duration?: number) => Promise<void>;
 }
 
 export interface MessageItemData {
@@ -22,4 +22,5 @@ export interface MessageItemData {
   message: string;
   duration: number;
   placement?: MessagePlacement;
+  resolve: () => void;
 }

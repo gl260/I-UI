@@ -38,7 +38,13 @@ const info = () => {
   IMessage('this is info message');
 };
 const success = () => {
-  IMessage({ message: 'this is success message', type: 'success' });
+  IMessage({ message: 'this is success message', type: 'success' })
+    .then(() => {
+      return IMessage('this is info message');
+    })
+    .then(() => {
+      return IMessage({ message: 'this is danger message', type: 'danger' });
+    });
 };
 const warning = () => {
   IMessage({ message: 'this is warning message', type: 'warning' });

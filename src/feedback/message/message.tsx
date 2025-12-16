@@ -268,6 +268,12 @@ const createMessageManager = (): MessageFunction => {
    * @param messageId 消息id
    */
   const removeMessage = (messageId: number) => {
+    const messageToRemove = messages.find(item => item.id === messageId);
+    // 如果消息有 resolve 函数，调用它来 resolve Promise
+    if (messageToRemove?.resolve) {
+      messageToRemove.resolve();
+    }
+
     // 过滤掉指定ID的消息
     messages = messages.filter(item => item.id !== messageId);
     // 重新渲染剩余消息
@@ -280,40 +286,44 @@ const createMessageManager = (): MessageFunction => {
    * @param message 消息内容
    * @param duration 消息持续时间 (默认3000ms)
    * @param placement 消息位置 (默认top)
+   * @returns Promise 在消息关闭时 resolve
    */
-  const show = (type: MessageType, message: string, duration: number, placement?: MessagePlacement) => {
-    id += 1;
-    const messageId = id;
-    messages.push({ id: messageId, type, message, duration, placement });
+  const show = (type: MessageType, message: string, duration: number, placement?: MessagePlacement): Promise<void> => {
+    return new Promise<void>(resolve => {
+      id += 1;
+      const messageId = id;
+      messages.push({ id: messageId, type, message, duration, placement, resolve });
 
-    renderMessages();
+      renderMessages();
+    });
   };
 
   /**
    * 主消息函数 - 支持对象配置
    * 用法: IMessage({ message: 'xxx', type: 'success' })
    * @param options 消息配置对象
+   * @returns Promise 在消息关闭时 resolve
    */
-  const messageFn = ((options: MessageOptions | string) => {
+  const messageFn = ((options: MessageOptions | string): Promise<void> => {
     if (typeof options === 'string') {
-      show('info', options, 3);
+      return show('info', options, 3);
     } else {
       const { type = 'info', message, duration, placement } = options;
-      show(type, message, duration, placement);
+      return show(type, message, duration, placement);
     }
-  }) as MessageFunction;
+  }) as unknown as MessageFunction;
 
-  messageFn.success = (message: string, duration: number) => {
-    show('success', message, duration);
+  messageFn.success = (message: string, duration?: number): Promise<void> => {
+    return show('success', message, duration);
   };
-  messageFn.warning = (message: string, duration: number) => {
-    show('warning', message, duration);
+  messageFn.warning = (message: string, duration?: number): Promise<void> => {
+    return show('warning', message, duration);
   };
-  messageFn.danger = (message: string, duration: number) => {
-    show('danger', message, duration);
+  messageFn.danger = (message: string, duration?: number): Promise<void> => {
+    return show('danger', message, duration);
   };
-  messageFn.info = (message: string, duration: number) => {
-    show('info', message, duration);
+  messageFn.info = (message: string, duration?: number): Promise<void> => {
+    return show('info', message, duration);
   };
 
   return messageFn as MessageFunction;
