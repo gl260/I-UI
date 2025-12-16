@@ -6,8 +6,9 @@ import { IRow, ICol } from './basic/layout/index.ts';
 import { IInput } from './form/input/index.ts';
 import { IRadio, IRadioButton, IRadioGroup } from './form/radio/index.ts';
 import { IAlert } from './feedback/alert/index.ts';
+import { IMessage } from './feedback/message/index.ts';
 
-export { IButton, IContainer, IAside, IFooter, IHeader, IMain, IRow, ICol, IInput, IRadio, IRadioButton, IRadioGroup, IAlert };
+export { IButton, IContainer, IAside, IFooter, IHeader, IMain, IRow, ICol, IInput, IRadio, IRadioButton, IRadioGroup, IAlert, IMessage };
 
 export default {
   install(app: App): void {

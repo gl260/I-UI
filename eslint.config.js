@@ -48,6 +48,7 @@ export default [
         document: 'readonly',
         navigator: 'readonly',
         location: 'readonly',
+        window: 'readonly',
         browser: true,
         es2020: true,
         node: true,
@@ -61,6 +62,7 @@ export default [
       'no-console': isProd ? 'warn' : 'off',
       'no-debugger': isProd ? 'warn' : 'off',
       'prettier/prettier': 'error',
+      'no-unused-vars': 'off',
     },
   },
 
