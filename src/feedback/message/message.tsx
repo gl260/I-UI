@@ -15,7 +15,7 @@ const MessageItem = defineComponent({
     },
     duration: {
       type: Number,
-      default: 3000,
+      default: 3,
     },
     onClose: {
       type: Function as PropType<() => void>,
@@ -44,7 +44,7 @@ const MessageItem = defineComponent({
       if (props.duration > 0) {
         timer = window.setTimeout(() => {
           close();
-        }, props.duration);
+        }, props.duration * 1000);
       }
     };
 
@@ -281,7 +281,7 @@ const createMessageManager = (): MessageFunction => {
    * @param duration 消息持续时间 (默认3000ms)
    * @param placement 消息位置 (默认top)
    */
-  const show = (type: MessageType, message: string, duration: number = 3000, placement?: MessagePlacement) => {
+  const show = (type: MessageType, message: string, duration: number = 3, placement?: MessagePlacement) => {
     id += 1;
     const messageId = id;
     messages.push({ id: messageId, type, message, duration, placement });
@@ -303,16 +303,16 @@ const createMessageManager = (): MessageFunction => {
     }
   }) as MessageFunction;
 
-  messageFn.success = (message: string, duration: number = 3000) => {
+  messageFn.success = (message: string, duration: number = 3) => {
     show('success', message, duration);
   };
-  messageFn.warning = (message: string, duration: number = 3000) => {
+  messageFn.warning = (message: string, duration: number = 3) => {
     show('warning', message, duration);
   };
-  messageFn.danger = (message: string, duration: number = 3000) => {
+  messageFn.danger = (message: string, duration: number = 3) => {
     show('danger', message, duration);
   };
-  messageFn.info = (message: string, duration: number = 3000) => {
+  messageFn.info = (message: string, duration: number = 3) => {
     show('info', message, duration);
   };
 
