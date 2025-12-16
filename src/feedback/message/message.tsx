@@ -281,7 +281,7 @@ const createMessageManager = (): MessageFunction => {
    * @param duration 消息持续时间 (默认3000ms)
    * @param placement 消息位置 (默认top)
    */
-  const show = (type: MessageType, message: string, duration: number = 3, placement?: MessagePlacement) => {
+  const show = (type: MessageType, message: string, duration: number, placement?: MessagePlacement) => {
     id += 1;
     const messageId = id;
     messages.push({ id: messageId, type, message, duration, placement });
@@ -296,23 +296,23 @@ const createMessageManager = (): MessageFunction => {
    */
   const messageFn = ((options: MessageOptions | string) => {
     if (typeof options === 'string') {
-      show('info', options, 3000);
+      show('info', options, 3);
     } else {
       const { type = 'info', message, duration, placement } = options;
       show(type, message, duration, placement);
     }
   }) as MessageFunction;
 
-  messageFn.success = (message: string, duration: number = 3) => {
+  messageFn.success = (message: string, duration: number) => {
     show('success', message, duration);
   };
-  messageFn.warning = (message: string, duration: number = 3) => {
+  messageFn.warning = (message: string, duration: number) => {
     show('warning', message, duration);
   };
-  messageFn.danger = (message: string, duration: number = 3) => {
+  messageFn.danger = (message: string, duration: number) => {
     show('danger', message, duration);
   };
-  messageFn.info = (message: string, duration: number = 3) => {
+  messageFn.info = (message: string, duration: number) => {
     show('info', message, duration);
   };
 
