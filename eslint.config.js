@@ -49,6 +49,7 @@ export default [
         navigator: 'readonly',
         location: 'readonly',
         window: 'readonly',
+        HTMLElement: 'readonly',
         browser: true,
         es2020: true,
         node: true,
