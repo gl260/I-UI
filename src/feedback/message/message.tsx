@@ -41,6 +41,7 @@ const MessageItem = defineComponent({
     // 启动定时器
     const startTimer = () => {
       clearTimer();
+      if (props.duration === 0) return;
       if (props.duration > 0) {
         timer = window.setTimeout(() => {
           close();
