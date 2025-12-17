@@ -106,7 +106,7 @@ const onClose = () => {
 
 :::
 
-## Input API
+## Alert API
 
 ### Attributes
 
