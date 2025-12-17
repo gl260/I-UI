@@ -25,5 +25,8 @@ export default {
     app.component(IRadioButton.name, IRadioButton);
     app.component(IRadioGroup.name, IRadioGroup);
     app.component(IAlert.name, IAlert);
+
+    // 挂载到全局属性
+    app.config.globalProperties.$message = IMessage;
   },
 };
