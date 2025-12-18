@@ -97,7 +97,7 @@ const MessageItem = defineComponent({
               flex items-center gap-[8px]
             `}
           >
-            <i class={`${iconType()} text-[14px] text-${props.type}`}></i>
+            <i class={`${iconType()} text-[16px] text-${props.type}`}></i>
             <span class={`text-[14px] text-#303133`}>{props.message}</span>
           </div>
         )}
