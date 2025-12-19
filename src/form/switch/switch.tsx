@@ -29,7 +29,7 @@ export default defineComponent({
       default: false,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'change'],
   setup(props, { slots, emit }) {
     const isDown = ref(false);
 
@@ -67,6 +67,7 @@ export default defineComponent({
       if (props.disabled) return;
       const newValue = isActive.value ? props.inactiveValue : props.activeValue;
       emit('update:modelValue', newValue);
+      emit('change', newValue);
     };
 
     const disabledClass = () => {
