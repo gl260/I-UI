@@ -1,21 +1,16 @@
 <template>
   <div class="common-layout">
-    <i-button @click="info">默认按钮</i-button>
-    <i-button @click="success">成功按钮</i-button>
-    <i-button @click="warning">警告按钮</i-button>
-    <i-button @click="danger">危险按钮</i-button>
-    <i-button @click="top">top</i-button>
-    <i-button @click="bottom">bottom</i-button>
-    <i-button @click="topLeft">top-left</i-button>
-    <i-button @click="topRight">top-right</i-button>
-    <i-button @click="bottomLeft">bottom-left</i-button>
-    <i-button @click="bottomRight">bottom-right</i-button>
+    <i-switch v-model="isChecked" active-text="是是是是是" inactive-text="否否否否否" />
+    <i-switch v-model="isChecked" active-text="开" inactive-text="关" />
+    <i-switch v-model="isChecked" disabled />
+    <i-switch v-model="isActive" :active-value="'是'" :inactive-value="'否'" @change="handleChange" />
+    <i-switch v-model="isChecked" loading />
   </div>
 </template>
 
 <script setup lang="ts">
-// import { ref } from 'vue';
-import IButton from './basic/button/button.tsx';
+import { ref } from 'vue';
+// import IButton from './basic/button/button.tsx';
 
 // import IContainer from './basic/container/container.jsx';
 // import IAside from './basic/container/aside.jsx';
@@ -31,44 +26,17 @@ import IButton from './basic/button/button.tsx';
 // import { IRadio, IRadioButton, IRadioGroup } from './form/radio/index.ts';
 
 // import { IAlert } from './feedback/alert/index.ts';
-import { IMessage } from './feedback/message/index.ts';
+// import { IMessage } from './feedback/message/index.ts';
 
-const info = () => {
-  // IMessage({ message: '这是一条信息', type: 'info' });
-  IMessage('this is info message');
-};
-const success = () => {
-  IMessage({ message: 'this is success message', type: 'success' })
-    .then(() => {
-      return IMessage('this is info message');
-    })
-    .then(() => {
-      return IMessage({ message: 'this is danger message', type: 'danger' });
-    });
-};
-const warning = () => {
-  IMessage({ message: 'this is warning message', type: 'warning' });
-};
-const danger = () => {
-  IMessage({ message: 'this is danger message', type: 'danger' });
-};
-const top = () => {
-  IMessage({ message: 'this is top message', type: 'warning', placement: 'top' });
-};
-const bottom = () => {
-  IMessage({ message: 'this is bottom message', type: 'warning', placement: 'bottom' });
-};
-const topLeft = () => {
-  IMessage({ message: 'this is top-left message', type: 'warning', placement: 'top-left' });
-};
-const topRight = () => {
-  IMessage({ message: 'this is top-right message', type: 'warning', placement: 'top-right' });
-};
-const bottomLeft = () => {
-  IMessage({ message: 'this is bottom-left message', type: 'warning', placement: 'bottom-left' });
-};
-const bottomRight = () => {
-  IMessage({ message: 'this is bottom-right message', type: 'warning', placement: 'bottom-right' });
+import { ISwitch } from './form/switch/index.ts';
+
+const isChecked = ref(false);
+
+const isActive = ref('是');
+console.log('sssss', isActive.value);
+
+const handleChange = () => {
+  console.log('handleChange', isActive.value);
 };
 </script>
 

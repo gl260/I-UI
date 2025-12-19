@@ -2,7 +2,7 @@ import { defineComponent, ref, computed } from 'vue';
 import 'uno.css';
 
 export default defineComponent({
-  name: 'main',
+  name: 'ISwitch',
   props: {
     modelValue: {
       type: [Boolean, String, Number],
