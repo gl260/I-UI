@@ -1,4 +1,4 @@
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, computed } from 'vue';
 import 'uno.css';
 
 export default defineComponent({
@@ -51,28 +51,29 @@ export default defineComponent({
 
     const handlePositionClass = () => {
       const width = isDown.value ? 'before:w-[20px]' : 'before:w-[16px]';
-      const isActive = props.modelValue;
       const leftValue = isDown.value
-        ? isActive
+        ? isActive.value
           ? 'before:left-[calc(100%-22px)]'
           : 'before:left-[2px]'
-        : isActive
+        : isActive.value
           ? 'before:left-[calc(100%-18px)]'
           : 'before:left-[2px]';
 
       return `${width} ${leftValue} ${isActive ? 'before:origin-right' : 'before:origin-left'}`.trim();
     };
 
+    const isActive = computed(() => props.modelValue === props.activeValue);
     const handleChange = (e: any) => {
       if (props.disabled) return;
-      emit('update:modelValue', !props.modelValue);
+      const newValue = isActive.value ? props.inactiveValue : props.activeValue;
+      emit('update:modelValue', newValue);
     };
 
     const disabledClass = () => {
       const cursor = props.disabled ? 'cursor-not-allowed' : 'cursor-pointer';
-      const bgColor = props.modelValue ? 'bg-primary' : 'bg-[rgba(0,0,0,0.25)]';
+      const bgColor = isActive.value ? 'bg-primary' : 'bg-[rgba(0,0,0,0.25)]';
       const opacity = props.disabled ? 'opacity-60' : '';
-      const hover = props.disabled ? '' : props.modelValue ? 'hover:bg-primary/80' : 'hover:bg-#8c8c8c';
+      const hover = props.disabled ? '' : isActive.value ? 'hover:bg-primary/80' : 'hover:bg-#8c8c8c';
 
       return `${cursor} ${bgColor} ${opacity} ${hover}`.trim();
     };
@@ -80,7 +81,7 @@ export default defineComponent({
     return () => (
       <div
         role="switch"
-        aria-checked={props.modelValue}
+        aria-checked={isActive.value}
         onClick={handleChange}
         onMousedown={handleMouseDown}
         onMouseup={handleMouseUp}
@@ -111,16 +112,16 @@ export default defineComponent({
             i-switch-inne
             h-[20px] text-[12px]
             flex items-center justify-center
-            relative z-10 ${props.modelValue ? 'right-[0px] pr-[20px] pl-[6px]' : 'left-[0px] pr-[6px] pl-[20px]'}
-            ${isDown.value && props.modelValue && 'translate-x-[-4px]'}
-            ${isDown.value && !props.modelValue && 'translate-x-[4px]'}
+            relative z-10 ${isActive.value ? 'right-[0px] pr-[20px] pl-[6px]' : 'left-[0px] pr-[6px] pl-[20px]'}
+            ${isDown.value && isActive.value && 'translate-x-[-4px]'}
+            ${isDown.value && !isActive.value && 'translate-x-[4px]'}
             overflow-hidden
             duration-300
             text-#fff
           `}
         >
-          <span aria-hidden={props.modelValue} class={`text-align-center`}>
-            {props.modelValue ? props.activeText : props.inactiveText}
+          <span aria-hidden={isActive.value} class={`text-align-center`}>
+            {isActive.value ? props.activeText : props.inactiveText}
           </span>
         </div>
       </div>
