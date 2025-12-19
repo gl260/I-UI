@@ -28,19 +28,23 @@ export default defineComponent({
       type: [String, Number, Boolean],
       default: false,
     },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
   emits: ['update:modelValue', 'change'],
   setup(props, { slots, emit }) {
     const isDown = ref(false);
 
     const handleMouseDown = (e: any) => {
-      if (props.disabled) return;
+      if (props.disabled || props.loading) return;
       e.preventDefault();
       isDown.value = true;
     };
 
     const handleMouseUp = (e: any) => {
-      if (props.disabled) return;
+      if (props.disabled || props.loading) return;
       e.preventDefault();
       isDown.value && (isDown.value = false);
     };
@@ -64,17 +68,17 @@ export default defineComponent({
 
     const isActive = computed(() => props.modelValue === props.activeValue);
     const handleChange = (e: any) => {
-      if (props.disabled) return;
+      if (props.disabled || props.loading) return;
       const newValue = isActive.value ? props.inactiveValue : props.activeValue;
       emit('update:modelValue', newValue);
       emit('change', newValue);
     };
 
     const disabledClass = () => {
-      const cursor = props.disabled ? 'cursor-not-allowed' : 'cursor-pointer';
+      const cursor = props.disabled || props.loading ? 'cursor-not-allowed' : 'cursor-pointer';
       const bgColor = isActive.value ? 'bg-primary' : 'bg-[rgba(0,0,0,0.25)]';
-      const opacity = props.disabled ? 'opacity-60' : '';
-      const hover = props.disabled ? '' : isActive.value ? 'hover:bg-primary/80' : 'hover:bg-#8c8c8c';
+      const opacity = props.disabled || props.loading ? 'opacity-60' : '';
+      const hover = props.disabled || props.loading ? '' : isActive.value ? 'hover:bg-primary/80' : 'hover:bg-#8c8c8c';
 
       return `${cursor} ${bgColor} ${opacity} ${hover}`.trim();
     };
@@ -87,7 +91,7 @@ export default defineComponent({
         onMousedown={handleMouseDown}
         onMouseup={handleMouseUp}
         onMouseleave={handleMouseLeave}
-        disabled={props.disabled}
+        disabled={props.disabled || props.loading}
         class={`
           i-switch
           box-border inline-block relative 
@@ -107,7 +111,20 @@ export default defineComponent({
             before:duration-300
             before:ease-out
           `}
-        ></div>
+        >
+          {props.loading && (
+            <div
+              class={`
+                i-switch-icon
+                flex absolute z-12 w-[20px] h-[20px] items-center justify-center
+                ${isActive.value ? 'left-[calc(100%-20px)]' : 'left-[0px]'}
+                duration-300
+              `}
+            >
+              <i class={`i-tabler-loader-2 animate-spin text-[14px] ${isActive.value ? 'text-primary' : 'text-[#aba9a9]'}`}></i>
+            </div>
+          )}
+        </div>
         <div
           class={`
             i-switch-inne
