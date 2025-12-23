@@ -138,7 +138,7 @@ export default defineComponent({
             text-#fff
           `}
         >
-          <span aria-hidden={isActive.value} class={`text-align-center`}>
+          <span aria-hidden={isActive.value} class={`text-align-center h-[20px] line-height-[20px]`}>
             {isActive.value ? props.activeText : props.inactiveText}
           </span>
         </div>
